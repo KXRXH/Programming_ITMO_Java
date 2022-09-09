@@ -1,5 +1,3 @@
-package org.example.Lab1;
-
 import java.util.Random;
 
 public class Lab1 {
