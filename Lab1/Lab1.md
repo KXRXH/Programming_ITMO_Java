@@ -1,7 +1,5 @@
 # Laboratory work № 1
 
-## Вариант: 367468
-
 ## Задание
 
 <img src="https://media.discordapp.net/attachments/889867107846750281/1017805661096136826/unknown.png">
