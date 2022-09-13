@@ -1,6 +1,5 @@
 package Lab2.Darkrai.moves;
 
-import java.awt.event.ItemEvent;
 
 import ru.ifmo.se.pokemon.Effect;
 import ru.ifmo.se.pokemon.Pokemon;
@@ -13,14 +12,11 @@ public class DreamEater extends SpecialMove {
         super(Type.PSYCHIC, 100d, 100d);
     }
 
-    protected void applyOppDamage(Pokemon p) {
-        
-    }
     protected void applySelfEffects(Pokemon p) {
-        // p.addEffect(new Effect().stat(Stat.HP, ));
+        p.addEffect(new Effect().stat(Stat.HP, (int) (p.getHP() / 2)));
     }
 
     protected String describe() {
-        return "использует специальную специальную аттаку Dream Eater";
+        return "использует специальную специальную аттаку (Dream Eater)";
     }
 }

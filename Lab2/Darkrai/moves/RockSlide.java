@@ -12,7 +12,6 @@ public class RockSlide extends PhysicalMove {
 
     protected void applyOppEffects(Pokemon p) {
         // Rock Slide deals damage and has a 30% chance of causing the target to flinch.
-        Effect.flinch(p);
+        p.addEffect((new Effect()).attack(0.0).turns((int) (Math.random() * 4.0 + 1.0)).chance(0.3d));
     }
-
 }
