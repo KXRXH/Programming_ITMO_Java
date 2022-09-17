@@ -5,6 +5,9 @@ import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.StatusMove;
 
+/**
+ * The type Leer.
+ */
 public class Leer extends StatusMove {
     protected void applyOppEffects(Pokemon p) {
         // https://pokemondb.net/move/leer

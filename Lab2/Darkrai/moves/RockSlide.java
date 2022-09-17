@@ -5,7 +5,13 @@ import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Rock slide.
+ */
 public class RockSlide extends PhysicalMove {
+    /**
+     * Instantiates a new Rock slide.
+     */
     public RockSlide() {
         super(Type.ROCK, 75d, 90d);
     }

@@ -7,7 +7,13 @@ import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.Status;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Flamethrower.
+ */
 public class Flamethrower extends SpecialMove {
+    /**
+     * Instantiates a new Flamethrower.
+     */
     public Flamethrower() {
         super(Type.FIRE, 90, 100);
     }

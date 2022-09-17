@@ -6,7 +6,16 @@ import Lab2.Infernape.moves.MachPunch;
 import Lab2.Monferno.Monferno;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Infernape.
+ */
 public class Infernape extends Monferno {
+    /**
+     * Instantiates a new Infernape.
+     *
+     * @param name the name
+     * @param lvl  the lvl
+     */
     public Infernape(String name, int lvl) {
         super(name, lvl);
         this.setType(Type.FIRE, Type.FIGHTING);

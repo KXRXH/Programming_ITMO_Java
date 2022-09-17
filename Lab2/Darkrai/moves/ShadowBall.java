@@ -6,7 +6,13 @@ import ru.ifmo.se.pokemon.SpecialMove;
 import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Shadow ball.
+ */
 public class ShadowBall extends SpecialMove {
+    /**
+     * Instantiates a new Shadow ball.
+     */
     public ShadowBall() {
         super(Type.GHOST, 80d, 100d);
     }

@@ -5,6 +5,9 @@ import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.StatusMove;
 
+/**
+ * The type Rock polish.
+ */
 public class RockPolish extends StatusMove {
     protected void applySelfEffects(Pokemon pokemon) {
         // https://pokemondb.net/move/rock-polish

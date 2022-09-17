@@ -6,7 +6,16 @@ import Lab2.Pawniard.moves.RockPolish;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Pawniard.
+ */
 public class Pawniard extends Pokemon {
+    /**
+     * Instantiates a new Pawniard.
+     *
+     * @param name the name
+     * @param lvl  the lvl
+     */
     public Pawniard(String name, int lvl) {
         super(name, lvl);
         this.setType(Type.DARK, Type.STEEL);

@@ -1,6 +1,14 @@
 import java.util.Random;
 
+/**
+ * The type Lab 1.
+ */
 public class Lab1 {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         long[] t = new long[11];
         {
@@ -13,7 +21,7 @@ public class Lab1 {
         }
         float[] x = new float[19];
         {
-            var rand = new Random();
+            Random rand = new Random();
             for (int i = 0; i < 19; i++) {
                 // Filling array with random float numbers from -14.0 to 8.0
                 x[i] = rand.nextFloat(-14f, 8f);

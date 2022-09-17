@@ -7,7 +7,16 @@ import Lab2.Darkrai.moves.ShadowBall;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Darkrai.
+ */
 public class Darkrai extends Pokemon {
+    /**
+     * Instantiates a new Darkrai.
+     *
+     * @param name the name
+     * @param lvl  the lvl
+     */
     public Darkrai(String name, int lvl) {
         super(name, lvl);
         this.setType(Type.DARK);

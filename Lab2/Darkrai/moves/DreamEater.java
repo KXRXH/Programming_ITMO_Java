@@ -7,7 +7,13 @@ import ru.ifmo.se.pokemon.SpecialMove;
 import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Dream eater.
+ */
 public class DreamEater extends SpecialMove {
+    /**
+     * Instantiates a new Dream eater.
+     */
     public DreamEater() {
         super(Type.PSYCHIC, 100d, 100d);
     }
