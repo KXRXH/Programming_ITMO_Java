@@ -4,6 +4,7 @@ import Lab2.Chimchar.moves.Flamethrower;
 import Lab2.Chimchar.moves.FurySwipes;
 import Lab2.Infernape.moves.MachPunch;
 import Lab2.Monferno.Monferno;
+import Lab2.Monferno.moves.SlackOff;
 import ru.ifmo.se.pokemon.Type;
 
 /**

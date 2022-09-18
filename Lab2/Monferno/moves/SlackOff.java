@@ -9,6 +9,6 @@ import ru.ifmo.se.pokemon.StatusMove;
  */
 public class SlackOff extends StatusMove {
     protected void applySelfEffects(Pokemon p) {
-        p.setMod(Stat.HP, Stat);
+        // p.setMod(Stat.HP, Stat);
     }
 }
