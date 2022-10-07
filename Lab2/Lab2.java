@@ -1,6 +1,6 @@
 package Lab2;
 
-import Lab2.Darkrai.Darkrai;
+import Lab2.Pokemons.Nosepass.Probopass.Probopass;
 import ru.ifmo.se.pokemon.Battle;
 import ru.ifmo.se.pokemon.Pokemon;
 
@@ -15,11 +15,10 @@ public class Lab2 {
      */
     public static void main(String[] args) {
         Battle b = new Battle();
-        Pokemon pt = new Pokemon("Тестовый чел", 5);
-        Darkrai d1 = new Darkrai("Даркраи", 1);
-        System.out.println(d1.getHP());
-        b.addAlly(d1);
+        Pokemon pt = new Pokemon("Тестовый чел", 10);
+        Pokemon prb = new Probopass("Kрутой чел", 1);
         b.addFoe(pt);
+        b.addAlly(prb);
         b.go();
     }
 }
