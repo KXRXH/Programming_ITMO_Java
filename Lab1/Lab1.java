@@ -80,6 +80,6 @@ public class Lab1 {
      * @return random number of the type float
      */
     private static float GenerateRandomFloatBetween(float min, float max) {
-        return (float) (Math.sin((rnd.nextFloat() * (Math.PI / 2. + 1))) * (max - min) - min);
+        return (float) (Math.sin((rnd.nextFloat() * (Math.PI / 2.))) * (max - min) - min);
     }
 }
