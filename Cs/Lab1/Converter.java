@@ -36,7 +36,7 @@ public class Converter {
     public static String anyToAnyInt(String num, int origin, int target) throws BadInput {
         // is number has correct format
         num = num.toUpperCase();
-        if (!isMatch(num, stringNumPattern)) {
+        if (isNotMatch(num, stringNumPattern)) {
             throw new BadInput("Invalid number: number has invalid chars " + num);
         }
         // is number systems are correct (value must be between 2 and 36)
@@ -53,15 +53,16 @@ public class Converter {
             // is number has only digits and chars.
             numCheckPattern = String.format("^[0-9,A-%s]+$", charSet.charAt(origin - 1));
         }
-        if (!isMatch(num, numCheckPattern)) {
+        if (isNotMatch(num, numCheckPattern)) {
             throw new BadInput("Invalid number: number isn't in " + origin + " number system.");
         }
         // converting the number target a decimal number if it is not already a decimal number.
-        int decimalNumberBuff = 0;
+        int decimalNumberBuff;
         if (origin == 10) {
             decimalNumberBuff = Integer.parseInt(num);
         } else {
             int power = num.length() - 1;
+            decimalNumberBuff = 0;
             for (int i = 0; i < num.length(); i++) {
                 decimalNumberBuff += (int) Math.pow(origin, power) * charSet.indexOf(num.charAt(i));
             }
@@ -78,11 +79,11 @@ public class Converter {
 
 
     /**
-     * @param str str number representation
+     * @param str       str number representation
      * @param regexExpr regex expression
      * @return boolean is num matches to regex expression
      */
-    private static boolean isMatch(String str, String regexExpr) {
-        return str.matches(regexExpr);
+    private static boolean isNotMatch(String str, String regexExpr) {
+        return !str.matches(regexExpr);
     }
 }
