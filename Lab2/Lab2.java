@@ -1,5 +1,10 @@
 package Lab2;
 
+import Lab2.Pokemons.Bellsprout.Bellsprout;
+import Lab2.Pokemons.Bellsprout.Weepinbell.Victreebel.Victreebel;
+import Lab2.Pokemons.Bellsprout.Weepinbell.Weepinbell;
+import Lab2.Pokemons.Dunsparce.Dunsparce;
+import Lab2.Pokemons.Nosepass.Nosepass;
 import Lab2.Pokemons.Nosepass.Probopass.Probopass;
 import ru.ifmo.se.pokemon.Battle;
 import ru.ifmo.se.pokemon.Pokemon;
@@ -15,10 +20,22 @@ public class Lab2 {
      */
     public static void main(String... args) {
         Battle b = new Battle();
-        Pokemon pt = new Pokemon("Тестовый чел", 10);
-        Pokemon prb = new Probopass("Kрутой чел", 1);
-        b.addFoe(pt);
-        b.addAlly(prb);
+        // First Pokémon team
+        int PokemonLevels = 50;
+        Pokemon[] firstTeam = {new Nosepass("Nosepass", PokemonLevels),
+                new Probopass("Probopass", PokemonLevels), new Dunsparce("Dunsparce", PokemonLevels)};
+        // Second Pokémon team
+        Pokemon[] secondTeam = {new Bellsprout("Bellsprout", PokemonLevels),
+                new Weepinbell("Weepinbell", PokemonLevels), new Victreebel("Victreebel", PokemonLevels)};
+        // Adding Pokémons from first team to the battle
+        for (Pokemon p : firstTeam) {
+            b.addFoe(p);
+        }
+        // Adding Pokémons from second team to the battle
+        for (Pokemon p : secondTeam) {
+            b.addAlly(p);
+        }
+        // Running the battle
         b.go();
     }
 }

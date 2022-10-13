@@ -1,0 +1,164 @@
+Bellsprout Bellsprout из команды полосатых вступает в бой!
+Nosepass Nosepass из команды черных вступает в бой!
+Bellsprout Bellsprout борется с соперником.
+Критический удар!
+Nosepass Nosepass теряет 21 здоровья.
+Bellsprout Bellsprout теряет 5 здоровья.
+
+Nosepass Nosepass борется с соперником.
+Bellsprout Bellsprout теряет 16 здоровья.
+Nosepass Nosepass теряет 4 здоровья.
+
+Bellsprout Bellsprout использует Sweet Scent.
+Nosepass Nosepass уменьшает уклоняемость.
+
+Nosepass Nosepass использует Discharge.
+Bellsprout Bellsprout теряет 11 здоровья.
+Bellsprout Bellsprout парализован
+
+Bellsprout Bellsprout использует Rest.
+Bellsprout Bellsprout теряет 32 здоровья.
+Bellsprout Bellsprout засыпает
+
+Nosepass Nosepass борется с соперником.
+Bellsprout Bellsprout теряет 16 здоровья.
+Nosepass Nosepass теряет 4 здоровья.
+
+Nosepass Nosepass использует Discharge.
+Bellsprout Bellsprout теряет 11 здоровья.
+
+
+Bellsprout Bellsprout использует Sweet Scent.
+Nosepass Nosepass уменьшает уклоняемость.
+
+Nosepass Nosepass использует Dazzling Gleam.
+Bellsprout Bellsprout теряет 10 здоровья.
+
+Bellsprout Bellsprout использует Rest.
+Bellsprout Bellsprout теряет 101 здоровья.
+Bellsprout Bellsprout засыпает
+Bellsprout Bellsprout теряет сознание.
+Weepinbell Weepinbell из команды полосатых вступает в бой!
+Weepinbell Weepinbell использует Sweet Scent.
+Nosepass Nosepass уменьшает уклоняемость.
+
+Nosepass Nosepass использует Discharge.
+Weepinbell Weepinbell теряет 11 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass борется с соперником.
+Weepinbell Weepinbell теряет 11 здоровья.
+Nosepass Nosepass теряет 3 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass борется с соперником.
+Weepinbell Weepinbell теряет 12 здоровья.
+Nosepass Nosepass теряет 3 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass использует Discharge.
+Weepinbell Weepinbell теряет 8 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass борется с соперником.
+Критический удар!
+Weepinbell Weepinbell теряет 18 здоровья.
+Nosepass Nosepass теряет 5 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass использует Dazzling Gleam.
+Критический удар!
+Weepinbell Weepinbell теряет 16 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass использует Dazzling Gleam.
+Критический удар!
+Weepinbell Weepinbell теряет 27 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass использует Earth Power.
+Weepinbell Weepinbell теряет 25 здоровья.
+
+Weepinbell Weepinbell промахивается
+
+Nosepass Nosepass борется с соперником.
+Weepinbell Weepinbell теряет 11 здоровья.
+Nosepass Nosepass теряет 3 здоровья.
+Weepinbell Weepinbell теряет сознание.
+Victreebel Victreebel из команды полосатых вступает в бой!
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass борется с соперником.
+Victreebel Victreebel теряет 8 здоровья.
+Nosepass Nosepass теряет 2 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Dazzling Gleam.
+Victreebel Victreebel теряет 6 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass борется с соперником.
+Victreebel Victreebel теряет 13 здоровья.
+Nosepass Nosepass теряет 3 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass борется с соперником.
+Victreebel Victreebel теряет 11 здоровья.
+Nosepass Nosepass теряет 3 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Dazzling Gleam.
+Критический удар!
+Victreebel Victreebel теряет 19 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Discharge.
+Victreebel Victreebel теряет 7 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Earth Power.
+Victreebel Victreebel теряет 14 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass борется с соперником.
+Victreebel Victreebel теряет 12 здоровья.
+Nosepass Nosepass теряет 3 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Dazzling Gleam.
+Victreebel Victreebel теряет 5 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Earth Power.
+Victreebel Victreebel теряет 22 здоровья.
+Victreebel Victreebel уменьшает специальную защиту.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Earth Power.
+Victreebel Victreebel теряет 12 здоровья.
+
+Victreebel Victreebel промахивается
+
+Nosepass Nosepass использует Earth Power.
+Критический удар!
+Victreebel Victreebel теряет 23 здоровья.
+Victreebel Victreebel теряет сознание.
+В команде полосатых не осталось покемонов.
+Команда черных побеждает в этом бою!
