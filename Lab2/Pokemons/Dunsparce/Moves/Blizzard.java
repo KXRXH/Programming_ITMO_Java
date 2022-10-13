@@ -1,23 +1,25 @@
-package Lab2.Pokemons.Dunsparce.moves;
+package Lab2.Pokemons.Dunsparce.Moves;
 
-import ru.ifmo.se.pokemon.Effect;
+import Lab2.Effects.MyEffects;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.SpecialMove;
-import ru.ifmo.se.pokemon.Status;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Blizzard.
+ */
 // https://pokemondb.net/move/blizzard
 public class Blizzard extends SpecialMove {
+    /**
+     * Instantiates a new Blizzard.
+     */
     public Blizzard() {
         super(Type.ICE, 110d, 70d);
     }
 
     @Override
     protected void applyOppEffects(Pokemon pokemon) {
-        if (!pokemon.hasType(Type.ICE)) {
-            Effect freezeEffect = (new Effect()).condition(Status.FREEZE).attack(0.0).turns(-1).chance(0.1);
-            pokemon.addEffect(freezeEffect);
-        }
+        MyEffects.freeze(pokemon, 0.1);
     }
 
     @Override

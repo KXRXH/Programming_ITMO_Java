@@ -13,7 +13,7 @@ public class Lab2 {
      *
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(String... args) {
         Battle b = new Battle();
         Pokemon pt = new Pokemon("Тестовый чел", 10);
         Pokemon prb = new Probopass("Kрутой чел", 1);

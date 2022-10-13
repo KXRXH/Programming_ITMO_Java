@@ -1,11 +1,17 @@
-package Lab2.Pokemons.Nosepass.Probopass.moves;
+package Lab2.Pokemons.Nosepass.Probopass.Moves;
 
 import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Magnet bomb.
+ */
 // https://pokemondb.net/move/magnet-bomb
 public class MagnetBomb extends PhysicalMove {
+    /**
+     * Instantiates a new Magnet bomb.
+     */
     public MagnetBomb() {
         super(Type.STEEL, 60d, 100d);
     }
@@ -16,4 +22,8 @@ public class MagnetBomb extends PhysicalMove {
         return true;
     }
 
+    @Override
+    protected String describe() {
+        return "использует Magnet Bomb";
+    }
 }

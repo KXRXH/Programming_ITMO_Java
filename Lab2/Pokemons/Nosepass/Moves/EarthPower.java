@@ -1,12 +1,18 @@
-package Lab2.Pokemons.Nosepass.moves;
+package Lab2.Pokemons.Nosepass.Moves;
 
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.SpecialMove;
 import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Earth power.
+ */
 // https://pokemondb.net/move/earth-power
 public class EarthPower extends SpecialMove {
+    /**
+     * Instantiates a new Earth power.
+     */
     public EarthPower() {
         super(Type.GROUND, 90d, 100d);
     }
@@ -20,6 +26,6 @@ public class EarthPower extends SpecialMove {
 
     @Override
     protected String describe() {
-        return "использует EarthPower";
+        return "использует Earth Power";
     }
 }

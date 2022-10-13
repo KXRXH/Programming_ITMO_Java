@@ -1,13 +1,22 @@
 package Lab2.Pokemons.Nosepass;
 
-import Lab2.Pokemons.Nosepass.moves.DazzlingGleam;
-import Lab2.Pokemons.Nosepass.moves.Discharge;
-import Lab2.Pokemons.Nosepass.moves.EarthPower;
+import Lab2.Pokemons.Nosepass.Moves.DazzlingGleam;
+import Lab2.Pokemons.Nosepass.Moves.Discharge;
+import Lab2.Pokemons.Nosepass.Moves.EarthPower;
 import ru.ifmo.se.pokemon.Move;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Nosepass.
+ */
 public class Nosepass extends Pokemon {
+    /**
+     * Instantiates a new Nosepass.
+     *
+     * @param name the name
+     * @param lvl  the lvl
+     */
     public Nosepass(String name, int lvl) {
         super(name, lvl);
         // HP, Attack, Defense, Sp. Atk, Sp. Def, Speed

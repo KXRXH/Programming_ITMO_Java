@@ -1,14 +1,23 @@
 package Lab2.Pokemons.Dunsparce;
 
-import Lab2.Pokemons.Dunsparce.moves.Blizzard;
-import Lab2.Pokemons.Dunsparce.moves.Bulldoze;
-import Lab2.Pokemons.Dunsparce.moves.DoubleTeam;
-import Lab2.Pokemons.Dunsparce.moves.Thunderbolt;
+import Lab2.Pokemons.Dunsparce.Moves.Blizzard;
+import Lab2.Pokemons.Dunsparce.Moves.Bulldoze;
+import Lab2.Pokemons.Dunsparce.Moves.DoubleTeam;
+import Lab2.Pokemons.Dunsparce.Moves.Thunderbolt;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
+/**
+ * The type Dunsparce.
+ */
 // https://pokemondb.net/pokedex/dunsparce
 public class Dunsparce extends Pokemon {
+    /**
+     * Instantiates a new Dunsparce.
+     *
+     * @param name the name
+     * @param lvl  the lvl
+     */
     public Dunsparce(String name, int lvl) {
         super(name, lvl);
         // HP, Attack, Defense, Sp. Atk, Sp. Def, Speed
