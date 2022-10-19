@@ -4,25 +4,10 @@ package Cs.Lab1;
  * The type Cs.Lab1.Converter.
  */
 public class Converter {
-    /**
-     * Converter's error class.
-     */
-    static class BadInput extends Exception {
-        /**
-         * Instantiates a new Bad input.
-         *
-         * @param errorMessage the error message
-         */
-        public BadInput(String errorMessage) {
-            super(errorMessage);
-        }
-    }
-
     private final static String CharSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final static String stringNumPattern = "^[0-9,A-Z]+$";
     private final static short MinNumberSystem = 2;
     private final static short MaxNumberSystem = 36; // equals to the length of "CharSet"
-
 
     /**
      * Any to any int string.
@@ -77,7 +62,6 @@ public class Converter {
         return result.toString();
     }
 
-
     /**
      * @param str       str number representation
      * @param regexExpr regex expression
@@ -85,5 +69,19 @@ public class Converter {
      */
     private static boolean isNotMatch(String str, String regexExpr) {
         return !str.matches(regexExpr);
+    }
+
+    /**
+     * Converter's error class.
+     */
+    static class BadInput extends Exception {
+        /**
+         * Instantiates a new Bad input.
+         *
+         * @param errorMessage the error message
+         */
+        public BadInput(String errorMessage) {
+            super(errorMessage);
+        }
     }
 }
