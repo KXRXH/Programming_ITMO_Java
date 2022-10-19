@@ -5,7 +5,7 @@ package Cs.Lab1;
  */
 public class Converter {
     /**
-     * The error type Bad input.
+     * Converter's error class.
      */
     static class BadInput extends Exception {
         /**
@@ -18,10 +18,10 @@ public class Converter {
         }
     }
 
-    private final static String charSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private final static String CharSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final static String stringNumPattern = "^[0-9,A-Z]+$";
-    private final static short MIN_NUMBER_SYSTEM = 2;
-    private final static short MAX_NUMBER_SYSTEM = 36; // equals to the length of charSet
+    private final static short MinNumberSystem = 2;
+    private final static short MaxNumberSystem = 36; // equals to the length of "CharSet"
 
 
     /**
@@ -40,8 +40,8 @@ public class Converter {
             throw new BadInput("Invalid number: number has invalid chars " + num);
         }
         // is number systems are correct (value must be between 2 and 36)
-        if (origin < MIN_NUMBER_SYSTEM || target < MIN_NUMBER_SYSTEM ||
-                origin > MAX_NUMBER_SYSTEM || target > MAX_NUMBER_SYSTEM) {
+        if (origin < MinNumberSystem || target < MinNumberSystem ||
+                origin > MaxNumberSystem || target > MaxNumberSystem) {
             throw new BadInput("Invalid number system: MIN=2, MAX=36.");
         }
         // Getting regex pattern for input number system.
@@ -51,7 +51,7 @@ public class Converter {
             numCheckPattern = String.format("^[0-%d]+$", origin - 1);
         } else {
             // is number has only digits and chars.
-            numCheckPattern = String.format("^[0-9,A-%s]+$", charSet.charAt(origin - 1));
+            numCheckPattern = String.format("^[0-9,A-%s]+$", CharSet.charAt(origin - 1));
         }
         if (isNotMatch(num, numCheckPattern)) {
             throw new BadInput("Invalid number: number isn't in " + origin + " number system.");
@@ -64,14 +64,14 @@ public class Converter {
             int power = num.length() - 1;
             decimalNumberBuff = 0;
             for (int i = 0; i < num.length(); i++) {
-                decimalNumberBuff += (int) Math.pow(origin, power) * charSet.indexOf(num.charAt(i));
+                decimalNumberBuff += (int) Math.pow(origin, power) * CharSet.indexOf(num.charAt(i));
             }
         }
         // converting to the target number system
         if (decimalNumberBuff == 0) return "0";
         StringBuilder result = new StringBuilder();
         while (decimalNumberBuff != 0) {
-            result.insert(0, charSet.charAt(decimalNumberBuff % target));
+            result.insert(0, CharSet.charAt(decimalNumberBuff % target));
             decimalNumberBuff /= target;
         }
         return result.toString();
