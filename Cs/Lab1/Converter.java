@@ -57,26 +57,33 @@ public class Converter {
             throw new BadInput("Invalid number: number isn't in " + origin + " number system.");
         }
         // converting the number target a decimal number if it is not already a decimal number.
-        int decimalNumberBuff;
-        if (origin == 10) {
-            decimalNumberBuff = Integer.parseInt(num);
-        } else {
-            int power = num.length() - 1;
-            decimalNumberBuff = 0;
-            for (int i = 0; i < num.length(); i++) {
-                decimalNumberBuff += (int) Math.pow(origin, power) * charSet.indexOf(num.charAt(i));
-            }
-        }
+        long decimalNumberBuff = GetIntegerValue(num, origin);
         // converting to the target number system
         if (decimalNumberBuff == 0) return "0";
         StringBuilder result = new StringBuilder();
         while (decimalNumberBuff != 0) {
-            result.insert(0, charSet.charAt(decimalNumberBuff % target));
+            result.insert(0, charSet.charAt((int) (decimalNumberBuff % target)));
             decimalNumberBuff /= target;
         }
         return result.toString();
     }
 
+    public static String anyToAnyInt(String num, int origin, NumeralSystems target) throws BadInput {
+        num = anyToAnyInt(num, origin, 10);
+        long decimalNumberBuff = GetIntegerValue(num, 10);
+        switch (target) {
+            case FACT -> {
+                int divisor = 2;
+                StringBuilder result = new StringBuilder();
+                while (decimalNumberBuff > 0) {
+                    result.insert(0, charSet.charAt((int) (decimalNumberBuff % divisor)));
+                    decimalNumberBuff /= divisor++;
+                }
+                return result.toString();
+            }
+        }
+        return num;
+    }
 
     /**
      * @param str       str number representation
@@ -85,5 +92,19 @@ public class Converter {
      */
     private static boolean isNotMatch(String str, String regexExpr) {
         return !str.matches(regexExpr);
+    }
+
+
+    private static long GetIntegerValue(String num, int origin) {
+        if (origin == 10) {
+            return Integer.parseInt(num);
+        }
+        long decimalNumberBuff;
+        int power = num.length() - 1;
+        decimalNumberBuff = 0;
+        for (int i = 0; i < num.length(); i++) {
+            decimalNumberBuff += (long) Math.pow(origin, power--) * charSet.indexOf(num.charAt(i));
+        }
+        return decimalNumberBuff;
     }
 }
