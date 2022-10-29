@@ -9,7 +9,7 @@ public final class Znayika extends Person {
     private Book Book;
 
     public Znayika(Mood mood, PersonState state) {
-        super("Знайка", 7, mood, state);
+        super("Знайка", 7, Sex.MALE, mood, state);
     }
 
     public Book getBook() {
@@ -19,7 +19,7 @@ public final class Znayika extends Person {
     @Override
     public void setState(PersonState newState) {
         switch (this.getState()) {
-            case SLEEP, WALK -> System.out.println("Znayika can't do this while he is " + this.getState().toString());
+            case SLEEP, WALK -> System.out.println("Znayika can't do this while he is " + this.getState());
             default -> super.setState(newState);
         }
     }

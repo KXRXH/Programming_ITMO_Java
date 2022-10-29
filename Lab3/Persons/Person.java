@@ -3,25 +3,32 @@ package Lab3.Persons;
 public abstract class Person {
     private String Name;
     private int Age;
+    private Sex PersonSex;
     private Mood PersonMood;
     private PersonState State;
 
-    public Person(String name, int age, Mood mood, PersonState state) {
+    public Person(String name, int age, Sex sex, Mood mood, PersonState state) {
         Name = name;
         Age = age;
         PersonMood = mood;
+        PersonSex = sex;
         State = state;
     }
 
-    public Person(String name, int age, Mood mood) {
+    public Person(String name, int age, Sex sex, Mood mood) {
         Name = name;
         Age = age;
         PersonMood = mood;
+        PersonSex = sex;
         State = PersonState.STAND;
     }
 
     public final PersonState getState() {
         return this.State;
+    }
+
+    public final Sex getSex() {
+        return this.PersonSex;
     }
 
     public final Mood getMood() {
