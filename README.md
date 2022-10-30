@@ -6,5 +6,5 @@ This is a repository for completed laboratory works.
 
 - Laboratory work 1 -> [Code](/Lab1/Lab1.java) | [Tusk](/Lab1/Lab1.md)
 - Laboratory work 2 -> [Code](/Lab2/) | [Tusk](/Lab2/Lab2.md)
-- Laboratory work 2 -> [Code](/Lab3/) | [Tusk](/Lab3/Lab3.md)
+- Laboratory work 3 -> [Code](/Lab3/) | [Tusk](/Lab3/Lab3.md)
 
