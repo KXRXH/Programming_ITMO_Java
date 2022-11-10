@@ -5,7 +5,7 @@ import Lab3.Interfaces.NotAlive;
 public abstract class ObjectCreatedByAMan implements NotAlive {
 
     private State ObjectState;
-    private Material ObjectMaterial;
+    private final Material ObjectMaterial;
 
     public ObjectCreatedByAMan(State currentState, Material material) {
         ObjectState = currentState;

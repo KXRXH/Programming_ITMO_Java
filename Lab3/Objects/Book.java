@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Book extends ObjectCreatedByAMan {
     // Author of the book
-    private String Author;
+    private final String Author;
     // Book name
-    private String BookName;
+    private final String BookName;
     // Text that was written in the book
     private String[] PageData;
     // Nubmer of pages in the book

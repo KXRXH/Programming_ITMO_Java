@@ -5,7 +5,7 @@ import Lab3.Interfaces.Alive;
 public abstract class Person implements Alive {
     private String Name;
     private int Age;
-    private Sex PersonSex;
+    private final Sex PersonSex;
     private Mood PersonMood;
     private PersonState State;
 
