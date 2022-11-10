@@ -1,11 +1,13 @@
 package Lab3.Objects;
 
-public abstract class SomeObject {
+import Lab3.Interfaces.NotAlive;
+
+public abstract class ObjectCreatedByAMan implements NotAlive {
 
     private State ObjectState;
     private Material ObjectMaterial;
 
-    public SomeObject(State currentState, Material material) {
+    public ObjectCreatedByAMan(State currentState, Material material) {
         ObjectState = currentState;
         ObjectMaterial = material;
     }
@@ -21,7 +23,7 @@ public abstract class SomeObject {
     @Override
     public boolean equals(Object otherObject) {
         if (otherObject.getClass().isInstance(this)) {
-            SomeObject other = (SomeObject) otherObject;
+            ObjectCreatedByAMan other = (ObjectCreatedByAMan) otherObject;
             return ObjectState == other.ObjectState && ObjectMaterial == other.ObjectMaterial;
         }
         return false;

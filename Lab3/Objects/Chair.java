@@ -2,9 +2,7 @@ package Lab3.Objects;
 
 import Lab3.Persons.Person;
 
-import java.util.Arrays;
-
-public class Chair extends SomeObject {
+public class Chair extends ObjectCreatedByAMan {
     private boolean IsOccupied;
     private Person OccupiedBy;
 

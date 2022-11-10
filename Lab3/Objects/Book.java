@@ -2,7 +2,7 @@ package Lab3.Objects;
 
 import java.util.Arrays;
 
-public class Book extends SomeObject {
+public class Book extends ObjectCreatedByAMan {
     // Author of the book
     private String Author;
     // Book name
