@@ -1,10 +1,10 @@
-package Lab3.Objects;
+package Lab3_4.Objects;
 
 public enum Material {
-    PAPER("Paper"),
-    WOOD("Wood"),
-    PLASTIC("Plastic"),
-    METAL("Metal");
+    PAPER("Бумага"),
+    WOOD("Дерево"),
+    PLASTIC("Пластик"),
+    METAL("Метал");
 
     private final String name;
 

@@ -1,6 +1,6 @@
-package Lab3.Interfaces;
+package Lab3_4.Interfaces;
 
-import Lab3.Objects.State;
+import Lab3_4.Objects.State;
 
 public interface NotAlive {
     State getState();

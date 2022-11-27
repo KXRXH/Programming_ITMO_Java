@@ -1,11 +1,12 @@
-package Lab3.Interfaces;
+package Lab3_4.Interfaces;
 
-import Lab3.Persons.Mood;
-import Lab3.Persons.PersonState;
-import Lab3.Persons.Sex;
+import Lab3_4.Persons.Mood;
+import Lab3_4.Persons.PersonState;
+import Lab3_4.Persons.Sex;
+import Lab3_4.World.Gravity;
 
 public interface Alive {
-    PersonState getState();
+    PersonState getState(Gravity gravity);
     Sex getSex();
     Mood getMood();
     int getAge();

@@ -1,6 +1,7 @@
-package Lab3.Objects;
+package Lab3_4.Objects;
 
-import Lab3.Persons.Person;
+import Lab3_4.Persons.Person;
+import Lab3_4.Persons.PersonState;
 
 public class Chair extends ObjectCreatedByAMan {
     private boolean IsOccupied;
@@ -23,8 +24,12 @@ public class Chair extends ObjectCreatedByAMan {
         if (IsOccupied != isOccupied) {
             IsOccupied = isOccupied;
             OccupiedBy = person;
+            if (IsOccupied) {
+                person.setState(PersonState.SIT);
+            } else
+                person.setState(PersonState.STAND);
         } else {
-            System.out.println("The chair is already " + (isOccupied ? "occupied" : "free"));
+            System.out.println("Стул уже " + (isOccupied ? "занят" : "свободен"));
         }
     }
 
@@ -44,11 +49,10 @@ public class Chair extends ObjectCreatedByAMan {
 
     @Override
     public String toString() {
-        return "Chair{" +
-                "Material=" + this.getMaterial().toString() +
-                ", State=" + this.getState().toString() +
-                ", IsOccupied=" + IsOccupied +
-                ", OccupiedBy=" + OccupiedBy +
+        return "Стул{" +
+                "Материал = " + this.getMaterial().toString() +
+                ", Состояние = " + this.getState().toString() +
+                ", Занят = " + (IsOccupied ? "Да, Занят(Person) = " + OccupiedBy.getName() : "Нет") +
                 '}';
     }
 }

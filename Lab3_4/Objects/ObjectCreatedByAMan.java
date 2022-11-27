@@ -1,6 +1,6 @@
-package Lab3.Objects;
+package Lab3_4.Objects;
 
-import Lab3.Interfaces.NotAlive;
+import Lab3_4.Interfaces.NotAlive;
 
 public abstract class ObjectCreatedByAMan implements NotAlive {
 

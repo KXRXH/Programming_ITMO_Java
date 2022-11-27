@@ -1,8 +1,8 @@
-package Lab3.Objects;
+package Lab3_4.Objects;
 
 public enum State {
-    FLY("Flying"),
-    STAND("Standing");
+    FLY("Летает"),
+    STAND("Стоит");
     private final String name;
 
     State(String name) {

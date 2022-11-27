@@ -1,12 +1,15 @@
-package Lab3.Persons;
+package Lab3_4.Persons;
 
-import Lab3.Interfaces.Alive;
+import Lab3_4.Interfaces.Alive;
+import Lab3_4.World.Gravity;
+import Lab3_4.World.ObjectWeight;
 
 public abstract class Person implements Alive {
-    private String Name;
+    private final String Name;
     private int Age;
     private final Sex PersonSex;
     private Mood PersonMood;
+    private final ObjectWeight Weight = ObjectWeight.MEDIUM;
     private PersonState State;
 
     public Person(String name, int age, Sex sex, Mood mood, PersonState state) {
@@ -25,7 +28,12 @@ public abstract class Person implements Alive {
         State = PersonState.STAND;
     }
 
-    public final PersonState getState() {
+    public final PersonState getState(Gravity gravity) {
+        if (gravity == Gravity.EARTH) {
+            return this.State;
+        } else {
+            this.State = PersonState.FLY;
+        }
         return this.State;
     }
 
@@ -46,8 +54,12 @@ public abstract class Person implements Alive {
     }
 
     public void setState(PersonState newState) {
+        if (this.State == PersonState.SIT && newState != PersonState.STAND) {
+            System.out.println(this.getName() + " не может сделать это, пока " + this.getState());
+            return;
+        }
         if (this.State == newState) {
-            System.out.println(this.getName() + " is already " + this.getState().toString());
+            System.out.println(this.getName() + " уже " + this.getState().toString());
         } else State = newState;
     }
 
@@ -61,7 +73,7 @@ public abstract class Person implements Alive {
 
     public final void goSleep() {
         switch (State) {
-            case WALK, SLEEP -> System.out.println(this.getName() + " can't go sleep now!");
+            case WALK, SLEEP -> System.out.println(this.getName() + " не может сейчас спать!");
             default -> this.setState(PersonState.SLEEP);
         }
     }
@@ -69,7 +81,10 @@ public abstract class Person implements Alive {
     public final void wakeUp() {
         if (State == PersonState.SLEEP) {
             State = PersonState.STAND;
-        } else System.out.println(this.getName() + " isn't sleeping!");
+        } else System.out.println(this.getName() + " не спит!");
     }
 
+    public ObjectWeight getWeight() {
+        return Weight;
+    }
 }
