@@ -1,4 +1,4 @@
-package lab3_4.People;
+package Lab3_4.People;
 
 public interface Alive {
     Integer getAge();

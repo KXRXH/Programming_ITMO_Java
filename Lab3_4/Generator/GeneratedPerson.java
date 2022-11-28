@@ -1,9 +1,9 @@
-package lab3_4.Generator;
+package Lab3_4.Generator;
 
-import lab3_4.People.Man;
-import lab3_4.People.Mood;
-import lab3_4.People.Sex;
-import lab3_4.People.State;
+import Lab3_4.People.Man;
+import Lab3_4.People.Mood;
+import Lab3_4.People.Sex;
+import Lab3_4.People.State;
 
 public class GeneratedPerson extends Man {
     public GeneratedPerson(String name, Integer age, Sex sex) {

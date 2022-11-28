@@ -1,9 +1,9 @@
-package lab3_4.World;
+package Lab3_4.World;
 
-import lab3_4.Objects.ObjectState;
-import lab3_4.Objects.SomeObject;
-import lab3_4.People.Man;
-import lab3_4.People.State;
+import Lab3_4.Objects.ObjectState;
+import Lab3_4.Objects.SomeObject;
+import Lab3_4.People.Man;
+import Lab3_4.People.State;
 
 import java.util.ArrayList;
 

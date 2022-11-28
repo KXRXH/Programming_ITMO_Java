@@ -1,4 +1,4 @@
-package lab3_4.World;
+package Lab3_4.World;
 
 public enum Gravity {
     Zero(0.0),

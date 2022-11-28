@@ -1,4 +1,4 @@
-package lab3_4.Objects;
+package Lab3_4.Objects;
 
 public abstract class SomeObject {
     private ObjectState State;

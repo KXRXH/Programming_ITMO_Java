@@ -1,7 +1,7 @@
-package lab3_4.Generator;
+package Lab3_4.Generator;
 
-import lab3_4.People.Man;
-import lab3_4.People.Sex;
+import Lab3_4.People.Man;
+import Lab3_4.People.Sex;
 
 import java.util.Random;
 

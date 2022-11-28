@@ -1,9 +1,9 @@
-package lab3_4;
+package Lab3_4;
 
-import lab3_4.Generator.Generator;
-import lab3_4.People.State;
-import lab3_4.World.Gravity;
-import lab3_4.World.World;
+import Lab3_4.Generator.Generator;
+import Lab3_4.People.State;
+import Lab3_4.World.Gravity;
+import Lab3_4.World.World;
 
 public class Lab3_4 {
     public static void main(String... args) {
