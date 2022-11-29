@@ -7,7 +7,11 @@ public interface Alive {
 
     Mood getMood();
 
+    void setMood(Mood mood);
+
     State getState();
+
+    void setState(State state);
 
     void growUp();
 
@@ -16,8 +20,4 @@ public interface Alive {
     void wakeUp();
 
     void info();
-
-    void setMood(Mood mood);
-
-    void setState(State state);
 }

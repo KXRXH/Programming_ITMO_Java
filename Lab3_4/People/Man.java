@@ -4,9 +4,9 @@ import Lab3_4.Objects.Book;
 
 public abstract class Man implements Alive {
     private final String Name;
+    private final Sex ManSex;
     private Integer Age;
     private Mood ManMood;
-    private final Sex ManSex;
     private State ManState;
 
     public Man(String name, Integer age, Sex sex) {
@@ -37,8 +37,17 @@ public abstract class Man implements Alive {
         return ManMood;
     }
 
+    public void setMood(Mood mood) {
+        ManMood = mood;
+    }
+
     public final State getState() {
         return ManState;
+    }
+
+    public void setState(State state) {
+        // TODO
+        ManState = state;
     }
 
     public final Sex getSex() {
@@ -89,15 +98,6 @@ public abstract class Man implements Alive {
 
     public void endReading() {
         System.out.println("Не читает!");
-    }
-
-    public void setMood(Mood mood) {
-        ManMood = mood;
-    }
-
-    public void setState(State state) {
-        // TODO
-        ManState = state;
     }
 
 }
