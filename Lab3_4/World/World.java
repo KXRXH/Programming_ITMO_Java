@@ -23,6 +23,20 @@ public class World {
     }
 
     /**
+     * @return количество людей в мире
+     */
+    public Integer getPeopleCount() {
+        return People.size();
+    }
+
+    /**
+     * @return количество объектов в мире
+     */
+    public Integer getObjectsCount() {
+        return Objects.size();
+    }
+
+    /**
      * @param index индекс человека в списке людей
      * @return человек, соответствующий индексу
      */
@@ -94,13 +108,7 @@ public class World {
             }
             // Низкая гравитация
             case Low -> {
-                for (Man man : People) {
-                    switch (man.getState()) {
-                        case FlyAndSleep -> man.setState(State.Sleep);
-                        case FlyAndRead -> man.setState(State.Read);
-                        default -> man.setState(State.Stand);
-                    }
-                }
+                changeGravityForPeople();
                 // Перебираем все объекты в мире и меняем их состояние на "летает"
                 for (SomeObject object : Objects) {
                     object.setState(ObjectState.Fly);
@@ -109,17 +117,25 @@ public class World {
 
             // Земная гравитация
             case Earth -> {
-                for (Man man : People) {
-                    switch (man.getState()) {
-                        case FlyAndSleep -> man.setState(State.Sleep);
-                        case FlyAndRead -> man.setState(State.Read);
-                        default -> man.setState(State.Stand);
-                    }
-                }
+                changeGravityForPeople();
                 // Перебираем все объекты в мире и меняем их состояние на "стоит"
                 for (SomeObject object : Objects) {
                     object.setState(ObjectState.Stand);
                 }
+            }
+        }
+    }
+
+    // Changing state for low and Earth gravity
+    private void changeGravityForPeople() {
+        for (Man man : People) {
+            switch (man.getState()) {
+                case FlyAndSleep -> {
+                    System.out.println(man.getName() + " падает на землю и просыпается.");
+                    man.setState(State.Lie);
+                }
+                case FlyAndRead -> man.setState(State.Read);
+                default -> man.setState(State.Stand);
             }
         }
     }

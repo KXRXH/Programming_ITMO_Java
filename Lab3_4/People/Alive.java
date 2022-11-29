@@ -11,6 +11,12 @@ public interface Alive {
 
     void growUp();
 
+    void goSleep();
+
+    void wakeUp();
+
+    void info();
+
     void setMood(Mood mood);
 
     void setState(State state);

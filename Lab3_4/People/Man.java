@@ -1,6 +1,8 @@
 package Lab3_4.People;
 
-public abstract class Man implements Alive{
+import Lab3_4.Objects.Book;
+
+public abstract class Man implements Alive {
     private final String Name;
     private Integer Age;
     private Mood ManMood;
@@ -23,24 +25,57 @@ public abstract class Man implements Alive{
         ManState = state;
     }
 
-    public String getName() {
+    public final String getName() {
         return Name;
     }
 
-    public Integer getAge() {
+    public final Integer getAge() {
         return Age;
     }
 
-    public Mood getMood() {
+    public final Mood getMood() {
         return ManMood;
     }
 
-    public State getState() {
+    public final State getState() {
         return ManState;
     }
 
-    public Sex getSex() {
+    public final Sex getSex() {
         return ManSex;
+    }
+
+    public final void goSleep() {
+        if (ManState == State.Fly || ManState == State.Lie) {
+            System.out.println(getName() + " засыпает");
+            if (ManState == State.Fly) {
+                ManState = State.FlyAndSleep;
+                return;
+            }
+            ManState = State.Sleep;
+        }
+        System.out.println(getName() + " не может сейчас заснуть");
+    }
+
+    public final void wakeUp() {
+        if (ManState == State.Sleep || ManState == State.FlyAndSleep) {
+            System.out.println(getName() + " просыпается");
+            if (ManState == State.FlyAndSleep) {
+                ManState = State.Fly;
+                return;
+            }
+            ManState = State.Lie;
+        }
+        System.out.println(getName() + " не может сейчас проснуться");
+    }
+
+    // Print information about person
+    public void info() {
+        System.out.println("Имя: " + getName());
+        System.out.println("Возраст: " + getAge());
+        System.out.println("Пол: " + getSex());
+        System.out.println("Настроение: " + getMood());
+        System.out.println("Состояние: " + getState());
     }
 
     public void growUp() {
@@ -48,12 +83,21 @@ public abstract class Man implements Alive{
         System.out.println(getName() + " стал старше на год. Теперь ему " + getAge() + " лет.");
     }
 
+    public void startReading(Book book) {
+        System.out.println(getName() + " не умеет читать!");
+    }
+
+    public void endReading() {
+        System.out.println("Не читает!");
+    }
+
     public void setMood(Mood mood) {
         ManMood = mood;
     }
 
     public void setState(State state) {
-        // TODO!
+        // TODO
         ManState = state;
     }
+
 }
