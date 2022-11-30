@@ -23,4 +23,12 @@ public class Book extends SomeObject {
     public String getTitle() {
         return Title;
     }
+
+    public String getKnowledge() {
+        return Knowledge;
+    }
+
+    public Integer getPagesCount() {
+        return PagesCount;
+    }
 }

@@ -4,6 +4,7 @@ import Lab3_4.Objects.Book;
 import Lab3_4.Objects.ObjectState;
 import Lab3_4.People.Man;
 import Lab3_4.People.Sex;
+import Lab3_4.People.StupidPerson;
 
 import java.util.Random;
 
@@ -17,7 +18,7 @@ public class Generator {
             "Полина", "Светлана", "София", "Татьяна", "Ульяна", "Фаина", "Юлия", "Яна", "Ярослава"};
 
     public static Man generateNewMan() {
-        Integer age = (int) (Math.random() * 60);
+        Integer age = (int) (Math.random() * 55 + 5);
         Sex sex = (new Random().nextInt(2) == 0) ? Sex.Male : Sex.Female;
         final String name;
         if (sex == Sex.Male) {
@@ -25,7 +26,7 @@ public class Generator {
         } else {
             name = FemaleNames[(int) (Math.random() * FemaleNames.length)];
         }
-        return new GeneratedPerson(name, age, sex);
+        return new StupidPerson(name, age, sex);
     }
 
     public static Book generateNewBook() {

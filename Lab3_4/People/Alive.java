@@ -1,15 +1,23 @@
 package Lab3_4.People;
 
 public interface Alive {
-    Integer getAge();
+    default Integer getAge() {
+        return 0;
+    }
 
-    String getName();
+    default String getName() {
+        return "Неизвестно";
+    }
 
-    Mood getMood();
+    default Mood getMood() {
+        return Mood.Neutral;
+    }
 
     void setMood(Mood mood);
 
-    State getState();
+    default State getState() {
+        return State.Stand;
+    }
 
     void setState(State state);
 
@@ -19,5 +27,10 @@ public interface Alive {
 
     void wakeUp();
 
-    void info();
+    default void info() {
+        System.out.println("Имя: " + getName());
+        System.out.println("Возраст: " + getAge());
+        System.out.println("Настроение: " + getMood());
+        System.out.println("Состояние: " + getState());
+    }
 }

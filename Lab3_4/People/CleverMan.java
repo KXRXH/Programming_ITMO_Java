@@ -19,6 +19,7 @@ public class CleverMan extends Man {
         if (MansBook == null) {
             MansBook = book;
             System.out.println(getName() + " начал читать " + MansBook.getTitle());
+            addKnowledge(MansBook.getKnowledge());
             return;
         }
         System.out.println(getName() + " уже читает " + MansBook.getTitle());

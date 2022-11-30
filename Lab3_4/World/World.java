@@ -2,6 +2,7 @@ package Lab3_4.World;
 
 import Lab3_4.Objects.ObjectState;
 import Lab3_4.Objects.SomeObject;
+import Lab3_4.Objects.Weight;
 import Lab3_4.People.Man;
 import Lab3_4.People.State;
 
@@ -19,7 +20,7 @@ public class World {
         People = new ArrayList<>();
         Objects = new ArrayList<>();
         WorldGravity = gravity;
-        System.out.println("Создан мир с гравитацией " + gravity);
+        System.out.println("Создан мир с гравитацией " + gravity + " (G = " + gravity.getGravityValue() + ")");
     }
 
     /**
@@ -83,7 +84,7 @@ public class World {
         }
         WorldGravity = gravity;
         updateGravity();
-        System.out.println("Гравитация в мире изменилась на " + gravity);
+        System.out.println("Гравитация в мире изменилась на " + gravity + " (G = " + gravity.getGravityValue() + ")");
     }
 
     /**
@@ -109,8 +110,12 @@ public class World {
             // Низкая гравитация
             case Low -> {
                 changeGravityForPeople();
-                // Перебираем все объекты в мире и меняем их состояние на "летает"
+                // Состояние завасит от веса
                 for (SomeObject object : Objects) {
+                    if (object.getWeight() == Weight.Heavy) {
+                        object.setState(ObjectState.Stand);
+                        continue;
+                    }
                     object.setState(ObjectState.Fly);
                 }
             }

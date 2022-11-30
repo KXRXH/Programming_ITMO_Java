@@ -14,6 +14,7 @@ public abstract class SomeObject {
     }
 
     public void setState(ObjectState state) {
+        System.out.println("Объект " + this + " теперь " + state);
         this.State = state;
     }
 

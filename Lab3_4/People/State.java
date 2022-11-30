@@ -8,6 +8,7 @@ public enum State {
     FlyAndRead("Летает и читает"),
     FlyAndSleep("Летает и спит"),
     Sleep("Спит"),
+    Run("Бежит"),
     Lie("Лежит");
 
     private final String TextValue;
