@@ -1,4 +1,4 @@
-package Lab3_4.People;
+package Lab3_4.Human;
 
 import Lab3_4.Objects.Book;
 

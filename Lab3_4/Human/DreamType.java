@@ -1,4 +1,4 @@
-package Lab3_4.People;
+package Lab3_4.Human;
 
 public enum DreamType {
     None(),
@@ -6,7 +6,7 @@ public enum DreamType {
     GoodDream(),
     BadDream();
 
-    public static final DreamType getRandDreamType() {
+    public static DreamType getRandDreamType() {
         return DreamType.values()[(int) (Math.random() * DreamType.values().length)];
     }
 }

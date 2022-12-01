@@ -1,4 +1,4 @@
-package Lab3_4.People;
+package Lab3_4.Human;
 
 public class StupidPerson extends Man {
     public StupidPerson(String name, Integer age, Sex sex) {

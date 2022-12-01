@@ -1,11 +1,11 @@
 package Lab3_4;
 
 import Lab3_4.Generator.Generator;
+import Lab3_4.Human.CleverMan;
+import Lab3_4.Human.Mood;
+import Lab3_4.Human.Sex;
+import Lab3_4.Human.State;
 import Lab3_4.Objects.Book;
-import Lab3_4.People.CleverMan;
-import Lab3_4.People.Mood;
-import Lab3_4.People.Sex;
-import Lab3_4.People.State;
 import Lab3_4.World.Gravity;
 import Lab3_4.World.World;
 

@@ -1,6 +1,6 @@
 package Lab3_4.Objects;
 
-import Lab3_4.People.Man;
+import Lab3_4.Human.Man;
 
 public class Chair extends SomeObject {
     private final Integer LegsCount;
@@ -27,7 +27,7 @@ public class Chair extends SomeObject {
             return;
         }
         SittingMan = man;
-        man.setState(Lab3_4.People.State.Sit);
+        man.setState(Lab3_4.Human.State.Sit);
         System.out.println("На стуле#" + getChairId() + " сидит " + SittingMan.getName());
     }
 

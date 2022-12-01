@@ -1,3 +1,8 @@
+# Laboratory work № 3-4
+
+## Text for the task
+
+```
 Вместе с головокружением у Знайки появилось какое-то странное ощущение зависания вниз головой,
 то есть ему на какой-то миг показалось, будто он перевернут кверху ногами. Оглядевшись по сторонам и убедившись,
 что он вовсе не вверх ногами, Знайка закрыл дверцу шкафа и уже хотел выпрямиться,
@@ -23,3 +28,58 @@
 и он начнет порхать по комнате, словно мотылек или какое-нибудь другое крылатое насекомое.
 "Что же со мной случилось? -- в смятении думал Знайка.
 -- Одно из двух: либо я нахожусь в состоянии невесомости, либо я сплю и все это мне во сне снится".
+```
+
+## Classes
+
+### Alive
+
+```java
+public interface Alive {
+    // Human methods
+}
+
+public abstract class Man {
+    // Implements Alive
+}
+
+public class StupidPerson extends Man {
+    // Stupid person can't read
+}
+
+public class CleverMan extends Man {
+    // CleverMan can read
+}
+```
+
+### Inanimate
+
+```java
+public interface Inanimate {
+    // Object methods
+}
+
+public abstract class SomeObject {
+    // Implements SomeObject
+    // Has weight (using for calculating state of the object in the gravity)
+}
+
+public class Book extends SomeObject {
+    // Clever person can read book
+}
+
+public class Chair extends SomeObject {
+    // Any human can sit on chair
+}
+```
+
+### World
+
+```java
+public class World {
+    /*
+     * World contains all objects and humans
+     * Controls gravity
+     */
+}
+```

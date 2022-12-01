@@ -1,11 +1,11 @@
 package Lab3_4.Generator;
 
+import Lab3_4.Human.Man;
+import Lab3_4.Human.Sex;
+import Lab3_4.Human.StupidPerson;
 import Lab3_4.Objects.Book;
 import Lab3_4.Objects.Chair;
 import Lab3_4.Objects.ObjectState;
-import Lab3_4.People.Man;
-import Lab3_4.People.Sex;
-import Lab3_4.People.StupidPerson;
 
 import java.util.Random;
 
