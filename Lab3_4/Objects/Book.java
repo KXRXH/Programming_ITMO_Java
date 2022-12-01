@@ -20,6 +20,12 @@ public class Book extends SomeObject {
         return Author;
     }
 
+    @Override
+    public void setState(ObjectState state) {
+        System.out.println("Книга " + this.getTitle() + " теперь " + state.toString().toLowerCase());
+        this.State = state;
+    }
+
     public String getTitle() {
         return Title;
     }

@@ -4,6 +4,8 @@ import Lab3_4.Objects.Book;
 
 import java.util.ArrayList;
 
+import static Lab3_4.People.DreamType.*;
+
 public abstract class Man implements Alive {
     protected final String Name;
     protected final Sex ManSex;
@@ -52,6 +54,9 @@ public abstract class Man implements Alive {
         return ManState;
     }
 
+    /**
+     * @param state состояние человека
+     */
     public void setState(State state) {
         if (state == State.Read) {
             System.out.println("Чтобы читать, нужно взять книгу");
@@ -132,6 +137,24 @@ public abstract class Man implements Alive {
     public final void goSleep() {
         if (ManState == State.Fly || ManState == State.Lie) {
             System.out.println(getName() + " засыпает...");
+            switch (DreamType.getRandDreamType()) {
+                case GoodDream -> {
+                    System.out.println(getName() + " увидел(а) хороший сон");
+                    ManMood = Mood.Happy;
+                }
+                case BadDream -> {
+                    System.out.println(getName() + " увидел(а) плохой сон");
+                    ManMood = Mood.Sad;
+                }
+                case Nightmare -> {
+                    System.out.println(getName() + " увидел(а) кошмарный сон");
+                    ManMood = Mood.Scared;
+                }
+                case None -> {
+                    System.out.println(getName() + " не увидел(а) сна");
+                    ManMood = Mood.Neutral;
+                }
+            }
             if (ManState == State.Fly) {
                 ManState = State.FlyAndSleep;
                 return;

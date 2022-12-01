@@ -1,8 +1,8 @@
 package Lab3_4.Objects;
 
 public abstract class SomeObject {
-    private final Weight ObjectWeight;
-    private ObjectState State;
+    protected final Weight ObjectWeight;
+    protected ObjectState State;
 
     public SomeObject(ObjectState state, Weight objectWeight) {
         this.ObjectWeight = objectWeight;
@@ -14,7 +14,7 @@ public abstract class SomeObject {
     }
 
     public void setState(ObjectState state) {
-        System.out.println("Объект " + this + " теперь " + state);
+        System.out.println("Объект " + this.getClass().getSimpleName() + " теперь " + state.toString().toLowerCase());
         this.State = state;
     }
 

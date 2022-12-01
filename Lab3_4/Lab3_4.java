@@ -15,6 +15,7 @@ public class Lab3_4 {
         world.addMan(new CleverMan("Знайка", 8, Sex.Male) {
             public void startReading(Book book) {
                 super.startReading(book);
+                System.out.println("Знайка становится счастливым");
                 setMood(Mood.Happy);
             }
         });
@@ -22,7 +23,6 @@ public class Lab3_4 {
         System.out.println("В мире " + world.getPeopleCount() + " человек(а)");
         // world.getMan(0).info();
         world.getMan(0).startReading((Book) world.getObject(0));
-        System.out.println(world.getMan(0).getMood());
         world.updateWorldGravity(Gravity.Zero);
         world.getMan(0).setState(State.Sit);
     }
