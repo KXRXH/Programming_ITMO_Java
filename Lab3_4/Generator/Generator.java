@@ -1,6 +1,7 @@
 package Lab3_4.Generator;
 
 import Lab3_4.Objects.Book;
+import Lab3_4.Objects.Chair;
 import Lab3_4.Objects.ObjectState;
 import Lab3_4.People.Man;
 import Lab3_4.People.Sex;
@@ -35,5 +36,9 @@ public class Generator {
         String knowledge = "Новое знание " + (int) (Math.random() * 1000);
         String author = MaleNames[(int) (Math.random() * MaleNames.length)];
         return new Book(author, name, ObjectState.Stand, pages, knowledge);
+    }
+
+    public static Chair generateNewChair() {
+        return new Chair(4, ObjectState.Stand);
     }
 }

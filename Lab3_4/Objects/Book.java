@@ -22,6 +22,9 @@ public class Book extends SomeObject {
 
     @Override
     public void setState(ObjectState state) {
+        if (State == state) {
+            return;
+        }
         System.out.println("Книга " + this.getTitle() + " теперь " + state.toString().toLowerCase());
         this.State = state;
     }

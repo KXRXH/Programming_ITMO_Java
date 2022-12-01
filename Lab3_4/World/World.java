@@ -50,6 +50,7 @@ public class World {
      */
     public void addMan(Man man) {
         People.add(man);
+        updateGravity();
     }
 
     /**
@@ -65,6 +66,7 @@ public class World {
      */
     public void addObject(SomeObject object) {
         Objects.add(object);
+        updateGravity();
     }
 
     /**

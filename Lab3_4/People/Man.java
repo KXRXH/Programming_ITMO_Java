@@ -4,8 +4,6 @@ import Lab3_4.Objects.Book;
 
 import java.util.ArrayList;
 
-import static Lab3_4.People.DreamType.*;
-
 public abstract class Man implements Alive {
     protected final String Name;
     protected final Sex ManSex;
@@ -64,7 +62,6 @@ public abstract class Man implements Alive {
         }
 
         if (state == ManState) {
-            System.out.println(getName() + " уже " + state);
             return;
         }
         switch (state) {

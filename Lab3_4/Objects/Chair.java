@@ -34,7 +34,6 @@ public class Chair extends SomeObject {
     @Override
     public void setState(ObjectState state) {
         if (State == state) {
-            System.out.println("Стул#" + this.getChairId() + " уже " + state.toString().toLowerCase());
             return;
         }
         switch (state) {
