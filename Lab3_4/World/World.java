@@ -1,5 +1,6 @@
 package Lab3_4.World;
 
+import Lab3_4.Exceptions.BadIndexException;
 import Lab3_4.Human.Man;
 import Lab3_4.Human.State;
 import Lab3_4.Objects.ObjectState;
@@ -41,7 +42,10 @@ public class World {
      * @param index индекс человека в списке людей
      * @return человек, соответствующий индексу
      */
-    public Man getMan(int index) {
+    public Man getMan(int index) throws BadIndexException {
+        if (index < 0 || index >= getPeopleCount()) {
+            throw new BadIndexException("Человека с индексом " + index + " не существует");
+        }
         return People.get(index);
     }
 
@@ -58,6 +62,9 @@ public class World {
      * @return объект, соответствующий индексу
      */
     public Object getObject(int index) {
+        if (index < 0 || index >= getObjectsCount()) {
+            throw new BadIndexException("Объекта с индексом " + index + " не существует");
+        }
         return Objects.get(index);
     }
 

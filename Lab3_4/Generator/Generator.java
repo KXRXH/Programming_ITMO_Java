@@ -4,9 +4,11 @@ import Lab3_4.Human.Man;
 import Lab3_4.Human.Sex;
 import Lab3_4.Human.StupidPerson;
 import Lab3_4.Objects.Book;
+import Lab3_4.Objects.BookShelf;
 import Lab3_4.Objects.Chair;
 import Lab3_4.Objects.ObjectState;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Generator {
@@ -40,5 +42,13 @@ public class Generator {
 
     public static Chair generateNewChair() {
         return new Chair(4, ObjectState.Stand);
+    }
+
+    public static BookShelf generateNewBookShelf(int booksCount) {
+        ArrayList<Book> books = new ArrayList<>();
+        for (int i = 0; i < booksCount; i++) {
+            books.add(generateNewBook());
+        }
+        return new BookShelf(books);
     }
 }

@@ -1,5 +1,6 @@
 package Lab3_4.Human;
 
+import Lab3_4.Exceptions.NullBookException;
 import Lab3_4.Objects.Book;
 
 public class CleverMan extends Man {
@@ -15,7 +16,10 @@ public class CleverMan extends Man {
     }
 
     @Override
-    public void startReading(Book book) {
+    public void startReading(Book book) throws NullBookException {
+        if (book == null) {
+            throw new NullBookException();
+        }
         if (MansBook == null) {
             MansBook = book;
             System.out.println(getName() + " начал читать " + MansBook.getTitle());

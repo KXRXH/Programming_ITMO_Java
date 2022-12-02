@@ -57,5 +57,17 @@ public class Chair extends SomeObject {
     public Integer getChairId() {
         return ChairId;
     }
+
+    @Override
+    public String toString() {
+        return "Стул с количеством ножек: " + this.getLegsCount() + " | Состояние: " +
+                this.getState().toString().toLowerCase() + " | Сидит на нем: " +
+                (SittingMan == null ? "Никто" : SittingMan.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getLegsCount().hashCode() + this.getChairId().hashCode() + SittingMan.hashCode();
+    }
 }
 

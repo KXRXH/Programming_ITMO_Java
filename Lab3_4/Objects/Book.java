@@ -40,4 +40,16 @@ public class Book extends SomeObject {
     public Integer getPagesCount() {
         return PagesCount;
     }
+
+    @Override
+    public String toString() {
+        return "Книга с названием: \"" + this.getTitle() + "\"| Автора: " + this.getAuthor() +
+                " | Состояние: " + this.getState().toString().toLowerCase() +
+                " | Страниц: " + this.getPagesCount() + "| Содержит: " + this.getKnowledge();
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getTitle().hashCode() + this.getAuthor().hashCode() + this.getPagesCount().hashCode() + this.getKnowledge().hashCode();
+    }
 }

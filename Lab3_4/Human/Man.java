@@ -1,6 +1,8 @@
 package Lab3_4.Human;
 
+import Lab3_4.Exceptions.NullBookException;
 import Lab3_4.Objects.Book;
+import Lab3_4.Objects.BookShelf;
 
 import java.util.ArrayList;
 
@@ -176,15 +178,6 @@ public abstract class Man implements Alive {
         System.out.println(getName() + " не спит.");
     }
 
-    // Print information about person
-    public void info() {
-        System.out.println("Имя: " + getName());
-        System.out.println("Возраст: " + getAge());
-        System.out.println("Пол: " + getSex());
-        System.out.println("Настроение: " + getMood());
-        System.out.println("Состояние: " + getState());
-    }
-
     /**
      * Человек взрослеет на год
      */
@@ -197,9 +190,13 @@ public abstract class Man implements Alive {
      * @param book Книга, которую человек должен прочитать
      *             Человек начинает читать книгу
      */
-    public void startReading(Book book) {
+    public void startReading(Book book) throws NullBookException {
         System.out.println(getName() + " не умеет читать!");
     }
+    public void startReading(BookShelf bookShelf, Integer index) throws NullBookException {
+        this.startReading(bookShelf.getBook(index));
+    }
+
 
     /**
      * Человек заканчивает читать книгу
