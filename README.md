@@ -4,7 +4,7 @@ This is a repository for completed laboratory works.
 
 ## Completed lab list
 
-- Laboratory work 1 -> [Code](/Lab1/Lab1.java) | [Tusk](/Lab1/Lab1.md)
-- Laboratory work 2 -> [Code](/Lab2/) | [Tusk](/Lab2/Lab2.md)
-- Laboratory work 3 and 4 -> [Code](/Lab3_4/) | [Tusk](/Lab3_4/Tusk.txt)
+- Laboratory work 1 -> [Code](/Lab1/Lab1.java) | [Task](/Lab1/Lab1.md)
+- Laboratory work 2 -> [Code](/Lab2/) | [Task](/Lab2/Lab2.md)
+- Laboratory work 3 and 4 -> [Code](/Lab3_4/) | [Task](/Lab3_4/Task.md)
 
