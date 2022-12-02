@@ -1,5 +1,9 @@
 package Lab3_4.Human;
 
+import Lab3_4.Objects.Book;
+import Lab3_4.Objects.BookShelf;
+import Lab3_4.Objects.Chair;
+
 public interface Alive {
     default Integer getAge() {
         return 0;
@@ -26,6 +30,12 @@ public interface Alive {
     void goSleep();
 
     void wakeUp();
+
+    void startReading(BookShelf bookShelf, Integer index);
+
+    void startReading(Book book);
+
+    void sitOnChair(Chair chair);
 
     default void info() {
         System.out.println("Имя: " + getName());

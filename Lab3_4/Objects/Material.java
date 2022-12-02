@@ -16,4 +16,8 @@ public enum Material {
     public String toString() {
         return TextValue;
     }
+
+    public Material getRandomMaterial() {
+        return Material.values()[(int) (Math.random() * Material.values().length)];
+    }
 }

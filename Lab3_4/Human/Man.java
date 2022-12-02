@@ -3,8 +3,10 @@ package Lab3_4.Human;
 import Lab3_4.Exceptions.NullBookException;
 import Lab3_4.Objects.Book;
 import Lab3_4.Objects.BookShelf;
+import Lab3_4.Objects.Chair;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Man implements Alive {
     protected final String Name;
@@ -198,12 +200,42 @@ public abstract class Man implements Alive {
         this.startReading(bookShelf.getBook(index));
     }
 
+    /**
+     * Человек содится на стул
+     *
+     * @param chair Стул, на который человек должен сесть
+     */
+    public void sitOnChair(Chair chair) {
+        this.setState(State.Sit);
+        if (getState() == State.Sit) {
+            chair.setSittingMan(this);
+            System.out.println(getName() + " сел на cтул#" + chair.getChairId());
+        }
+    }
 
     /**
      * Человек заканчивает читать книгу
      */
     public void endReading() {
-        System.out.println("Не читает!");
+        System.out.println(getName() + "не начинал читать!");
     }
 
+    @Override
+    public String toString() {
+        return "Man{" + "Name='" + Name + '\'' + ", ManSex=" + ManSex + ", KnowledgeArray=" + KnowledgeArray + ", Age=" + Age + ", ManMood=" + ManMood + ", ManState=" + ManState + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        return o instanceof Man && ((Man) o).getName().equals(getName()) && ((Man) o).getAge().equals(getAge()) &&
+                ((Man) o).KnowledgeArray.equals(KnowledgeArray) && ((Man) o).getSex().equals(getSex()) &&
+                ((Man) o).getMood().equals(getMood());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), ManSex, KnowledgeArray, getAge(), ManMood, ManState);
+    }
 }

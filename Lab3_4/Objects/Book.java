@@ -50,14 +50,14 @@ public class Book extends SomeObject {
 
     @Override
     public int hashCode() {
-        return this.getTitle().hashCode() + this.getAuthor().hashCode() + this.getPagesCount().hashCode() + this.getKnowledge().hashCode();
+        return this.getTitle().hashCode() + this.getAuthor().hashCode() + this.getPagesCount().hashCode()
+                + this.getKnowledge().hashCode();
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
+        if (this == obj) return true;
+        if (obj == null) return false;
         return obj instanceof Book && this.hashCode() == obj.hashCode();
     }
 }

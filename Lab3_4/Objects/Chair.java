@@ -73,9 +73,8 @@ public class Chair extends SomeObject {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
+        if (this == obj) return true;
+        if (obj == null) return false;
         return obj instanceof Chair && this.hashCode() == obj.hashCode();
     }
 }

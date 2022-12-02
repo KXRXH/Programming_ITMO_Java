@@ -7,6 +7,7 @@ public enum State {
     Read("Читает"),
     FlyAndRead("Летает и читает"),
     FlyAndSleep("Летает и спит"),
+    SitAndRead("Сидит и читает"),
     Sleep("Спит"),
     Run("Бежит"),
     Lie("Лежит");
