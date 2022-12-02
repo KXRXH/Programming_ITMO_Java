@@ -38,4 +38,18 @@ public class CleverMan extends Man {
         }
         System.out.println(getName() + " не читает ничего");
     }
+
+    @Override
+    public String toString() {
+        return "CleverMan{" +
+                "MansBook=" + MansBook +
+                ", Name='" + Name + '\'' +
+                ", ManSex=" + ManSex +
+                ", KnowledgeArray=" + KnowledgeArray +
+                ", Age=" + Age +
+                ", ManMood=" + ManMood +
+                ", ManState=" + ManState +
+                ", ManHands=" + ManHands +
+                '}';
+    }
 }

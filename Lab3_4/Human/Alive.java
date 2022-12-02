@@ -27,6 +27,8 @@ public interface Alive {
 
     void growUp();
 
+    Sex getSex();
+
     void goSleep();
 
     void wakeUp();

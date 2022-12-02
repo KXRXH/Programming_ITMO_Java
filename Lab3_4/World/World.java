@@ -10,9 +10,9 @@ import Lab3_4.Objects.Weight;
 import java.util.ArrayList;
 
 public class World {
-    private final ArrayList<Man> People;
-    private final ArrayList<SomeObject> Objects;
-    private Gravity WorldGravity;
+    private ArrayList<Man> People;
+    private ArrayList<SomeObject> Objects;
+    private Lab3_4.World.Gravity WorldGravity;
 
     /**
      * @param gravity гравитация мира
@@ -38,6 +38,22 @@ public class World {
         return Objects.size();
     }
 
+    public void apocalypse() {
+        People = null;
+        Objects = null;
+        System.out.println("Наступил конец света...\n" +
+                "⢿⣿⣿⣿⣭⠹⠛⠛⠛⢿⣿⣿⣿⣿⡿⣿⠷⠶⠿⢻⣿⣛⣦⣙⠻⣿\n" +
+                "⣿⣿⢿⣿⠏⠀⠀⡀⠀⠈⣿⢛⣽⣜⠯⣽⠀⠀⠀⠀⠙⢿⣷⣻⡀⢿\n" +
+                "⠐⠛⢿⣾⣖⣤⡀⠀⢀⡰⠿⢷⣶⣿⡇⠻⣖⣒⣒⣶⣿⣿⡟⢙⣶⣮\n" +
+                "⣤⠀⠀⠛⠻⠗⠿⠿⣯⡆⣿⣛⣿⡿⠿⠮⡶⠼⠟⠙⠊⠁⠀⠸⢣⣿\n" +
+                "⣿⣷⡀⠀⠀⠀⠀⠠⠭⣍⡉⢩⣥⡤⠥⣤⡶⣒⠀⠀⠀⠀⠀⢰⣿⣿\n" +
+                "⣿⣿⡽⡄⠀⠀⠀⢿⣿⣆⣿⣧⢡⣾⣿⡇⣾⣿⡇⠀⠀⠀⠀⣿⡇⠃\n" +
+                "⣿⣿⣷⣻⣆⢄⠀⠈⠉⠉⠛⠛⠘⠛⠛⠛⠙⠛⠁⠀⠀⠀⠀⣿⡇⢸\n" +
+                "⢞⣿⣿⣷⣝⣷⣝⠦⡀⠀⠀⠀⠀⠀⠀⠀⡀⢀⠀⠀⠀⠀⠀⠛⣿⠈\n" +
+                "⣦⡑⠛⣟⢿⡿⣿⣷⣝⢧⡀⠀⠀⣶⣸⡇⣿⢸⣧⠀⠀⠀⠀⢸⡿⡆\n" +
+                "⣿⣿⣷⣮⣭⣍⡛⠻⢿⣷⠿⣶⣶⣬⣬⣁⣉⣀⣀⣁⡤⢴⣺⣾⣽⡇");
+    }
+
     /**
      * @param index индекс человека в списке людей
      * @return человек, соответствующий индексу
@@ -52,9 +68,10 @@ public class World {
     /**
      * @param man человек, который нужно добавить в мир
      */
-    public void addMan(Man man) {
+    public Man addMan(Man man) {
         People.add(man);
         updateGravity();
+        return man;
     }
 
     /**

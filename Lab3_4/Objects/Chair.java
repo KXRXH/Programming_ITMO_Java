@@ -51,7 +51,6 @@ public class Chair extends SomeObject {
                 State = state;
             }
         }
-        System.out.println("Стул#" + ChairId + " теперь " + state.toString().toLowerCase());
         this.State = state;
     }
 

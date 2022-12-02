@@ -15,6 +15,7 @@ public abstract class Man implements Alive {
     protected Integer Age;
     protected Mood ManMood;
     protected State ManState;
+    protected HandsState ManHands;
 
     public Man(String name, Integer age, Sex sex) {
         Name = name;
@@ -52,6 +53,10 @@ public abstract class Man implements Alive {
         ManMood = mood;
     }
 
+    public HandsState getHandState() {
+        return ManHands;
+    }
+
     public final State getState() {
         return ManState;
     }
@@ -69,6 +74,16 @@ public abstract class Man implements Alive {
             return;
         }
         switch (state) {
+            case Sit -> {
+                switch (ManState) {
+                    case Fly, FlyAndRead, FlyLikeABird, FlyAndSleep, Sleep -> {
+                        return;
+                    }
+                    default -> {
+                        ManState = State.Sit;
+                    }
+                }
+            }
             case Fly -> {
                 switch (ManState) {
                     case Sleep -> {
@@ -126,6 +141,15 @@ public abstract class Man implements Alive {
 
     public final String getKnowledge(Integer index) {
         return KnowledgeArray.get(index);
+    }
+
+    public final void startFly() {
+        if (getHandState() == HandsState.BothUp && getState() == State.Fly) {
+            setState(State.FlyLikeABird);
+            System.out.println(getName() + " летает словно птица!");
+            return;
+        }
+        System.out.println(getName() + " не может летать, пока не поднимет руки");
     }
 
     protected final void addKnowledge(String knowledge) {
@@ -231,7 +255,7 @@ public abstract class Man implements Alive {
         if (o == null) return false;
         return o instanceof Man && ((Man) o).getName().equals(getName()) && ((Man) o).getAge().equals(getAge()) &&
                 ((Man) o).KnowledgeArray.equals(KnowledgeArray) && ((Man) o).getSex().equals(getSex()) &&
-                ((Man) o).getMood().equals(getMood());
+                ((Man) o).getMood().equals(getMood()) && ((Man) o).getHandState().equals(getHandState());
     }
 
     @Override

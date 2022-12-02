@@ -6,15 +6,15 @@ import Lab3_4.Generator.Generator;
 import Lab3_4.Human.CleverMan;
 import Lab3_4.Human.Mood;
 import Lab3_4.Human.Sex;
-import Lab3_4.Human.State;
 import Lab3_4.Objects.Book;
+import Lab3_4.Objects.Chair;
 import Lab3_4.World.Gravity;
 import Lab3_4.World.World;
 
 public class Lab3_4 {
     public static void main(String... args) throws BadIndexException, NullBookException {
         World world = new World(Gravity.Earth);
-        world.addMan(new CleverMan("Знайка", 8, Sex.Male) {
+        CleverMan znayka = (CleverMan) world.addMan(new CleverMan("Знайка", 8, Sex.Male) {
             @Override
             public void startReading(Book book) throws NullBookException {
                 super.startReading(book);
@@ -28,6 +28,11 @@ public class Lab3_4 {
         System.out.println("В мире " + world.getPeopleCount() + " человек(а)");
         // world.getMan(0).info();
         world.updateWorldGravity(Gravity.Zero);
-        world.getMan(0).setState(State.Sit);
+        world.addObject(Generator.generateNewChair());
+        world.updateWorldGravity(Gravity.Earth);
+        world.getMan(0).sitOnChair((Chair) world.getObject(2));
+        world.updateWorldGravity(Gravity.Zero);
+        world.apocalypse();
+        // world.getMan(0).info();
     }
 }

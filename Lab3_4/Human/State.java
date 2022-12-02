@@ -4,6 +4,7 @@ public enum State {
     Stand("Стоит"),
     Sit("Сидит"),
     Fly("Летает"),
+    FlyLikeABird("Летает как птица"),
     Read("Читает"),
     FlyAndRead("Летает и читает"),
     FlyAndSleep("Летает и спит"),
