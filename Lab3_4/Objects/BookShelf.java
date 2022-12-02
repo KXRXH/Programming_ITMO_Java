@@ -2,19 +2,30 @@ package Lab3_4.Objects;
 
 import Lab3_4.Exceptions.BadIndexException;
 import Lab3_4.Exceptions.NullBookException;
+import Lab3_4.Exceptions.UnexpectedArgumentValueException;
+import Lab3_4.Exceptions.UnexpectedMaterialException;
 
 import java.util.ArrayList;
 
 public class BookShelf extends SomeObject {
     private final ArrayList<Book> Books = new ArrayList<>();
 
-    public BookShelf(ArrayList<Book> Books) {
-        super(ObjectState.Stand, Weight.Heavy);
+    public BookShelf(Material material, ArrayList<Book> Books) {
+        super(ObjectState.Stand, Weight.Heavy, material);
+        if (material == Lab3_4.Objects.Material.Paper) {
+            throw new UnexpectedMaterialException("Книжная полка не может быть из бумаги");
+        }
+        if (Books == null) {
+            throw new UnexpectedArgumentValueException("Книжная полка не может быть равна null");
+        }
         this.Books.addAll(Books);
     }
 
-    public BookShelf() {
-        super(ObjectState.Stand, Weight.Heavy);
+    public BookShelf(Material material) throws UnexpectedMaterialException {
+        super(ObjectState.Stand, Weight.Heavy, material);
+        if (material == Lab3_4.Objects.Material.Paper) {
+            throw new UnexpectedMaterialException("Книжная полка не может быть из бумаги");
+        }
     }
 
     public final void addBook(Book book) throws NullBookException {
@@ -55,5 +66,13 @@ public class BookShelf extends SomeObject {
             result.append(book.toString()).append("\n");
         }
         return result.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        return obj instanceof BookShelf && this.hashCode() == obj.hashCode();
     }
 }

@@ -1,12 +1,9 @@
 package Lab3_4.Generator;
 
+import Lab3_4.Human.FoolishPerson;
 import Lab3_4.Human.Man;
 import Lab3_4.Human.Sex;
-import Lab3_4.Human.StupidPerson;
-import Lab3_4.Objects.Book;
-import Lab3_4.Objects.BookShelf;
-import Lab3_4.Objects.Chair;
-import Lab3_4.Objects.ObjectState;
+import Lab3_4.Objects.*;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -29,7 +26,7 @@ public class Generator {
         } else {
             name = FemaleNames[(int) (Math.random() * FemaleNames.length)];
         }
-        return new StupidPerson(name, age, sex);
+        return new FoolishPerson(name, age, sex);
     }
 
     public static Book generateNewBook() {
@@ -41,7 +38,7 @@ public class Generator {
     }
 
     public static Chair generateNewChair() {
-        return new Chair(4, ObjectState.Stand);
+        return new Chair(Material.Wood, 4, ObjectState.Stand);
     }
 
     public static BookShelf generateNewBookShelf(int booksCount) {
@@ -49,6 +46,6 @@ public class Generator {
         for (int i = 0; i < booksCount; i++) {
             books.add(generateNewBook());
         }
-        return new BookShelf(books);
+        return new BookShelf(Material.Wood, books);
     }
 }

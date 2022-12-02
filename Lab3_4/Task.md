@@ -44,7 +44,7 @@ public abstract class Man {
 }
 
 public class StupidPerson extends Man {
-    // Stupid person can't read
+    // Foolish person can't read
 }
 
 public class CleverMan extends Man {
@@ -79,7 +79,7 @@ public class Chair extends SomeObject {
 public class World {
     /*
      * World contains all objects and humans
-     * Controls gravity
+     * World controls gravity
      */
 }
 ```

@@ -9,7 +9,7 @@ public class Book extends SomeObject {
 
 
     public Book(String author, String title, ObjectState state, Integer pagesCount, String knowledge) {
-        super(state, Weight.Light);
+        super(state, Weight.Light, Lab3_4.Objects.Material.Paper);
         this.Author = author;
         this.Title = title;
         PagesCount = pagesCount;
@@ -51,5 +51,13 @@ public class Book extends SomeObject {
     @Override
     public int hashCode() {
         return this.getTitle().hashCode() + this.getAuthor().hashCode() + this.getPagesCount().hashCode() + this.getKnowledge().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        return obj instanceof Book && this.hashCode() == obj.hashCode();
     }
 }

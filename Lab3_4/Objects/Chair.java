@@ -2,13 +2,14 @@ package Lab3_4.Objects;
 
 import Lab3_4.Human.Man;
 
+
 public class Chair extends SomeObject {
     private final Integer LegsCount;
     private final Integer ChairId;
     private Man SittingMan = null;
 
-    public Chair(Integer legsCount, ObjectState state) {
-        super(state, Weight.Light);
+    public Chair(Material material, Integer legsCount, ObjectState state) {
+        super(state, Weight.Light, material);
         LegsCount = legsCount;
         ChairId = (int) (Math.random() * 1000);
     }
@@ -67,7 +68,15 @@ public class Chair extends SomeObject {
 
     @Override
     public int hashCode() {
-        return this.getLegsCount().hashCode() + this.getChairId().hashCode() + SittingMan.hashCode();
+        return this.getLegsCount().hashCode() + SittingMan.hashCode() + this.Material.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        return obj instanceof Chair && this.hashCode() == obj.hashCode();
     }
 }
 

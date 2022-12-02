@@ -193,6 +193,7 @@ public abstract class Man implements Alive {
     public void startReading(Book book) throws NullBookException {
         System.out.println(getName() + " не умеет читать!");
     }
+
     public void startReading(BookShelf bookShelf, Integer index) throws NullBookException {
         this.startReading(bookShelf.getBook(index));
     }

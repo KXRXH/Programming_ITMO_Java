@@ -2,11 +2,13 @@ package Lab3_4.Objects;
 
 public abstract class SomeObject {
     protected final Weight ObjectWeight;
+    protected final Material Material;
     protected ObjectState State;
 
-    public SomeObject(ObjectState state, Weight objectWeight) {
+    public SomeObject(ObjectState state, Weight objectWeight, Material material) {
         this.ObjectWeight = objectWeight;
         this.State = state;
+        this.Material = material;
     }
 
     public ObjectState getState() {
