@@ -33,6 +33,8 @@ public interface Alive {
 
     void wakeUp();
 
+    HandsState getHandState();
+
     void startReading(BookShelf bookShelf, Integer index);
 
     void startReading(Book book);

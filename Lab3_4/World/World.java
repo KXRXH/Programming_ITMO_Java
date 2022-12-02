@@ -21,7 +21,8 @@ public class World {
         People = new ArrayList<>();
         Objects = new ArrayList<>();
         WorldGravity = gravity;
-        System.out.println("Создан мир с гравитацией " + gravity + " (G = " + gravity.getGravityValue() + ")");
+        System.out.println("\uD83C\uDF0E Создан мир с гравитацией " + gravity + " (G = " + gravity.getGravityValue()
+                + ") \uD83C\uDF0E");
     }
 
     /**
@@ -38,10 +39,17 @@ public class World {
         return Objects.size();
     }
 
+    public void info() {
+        System.out.println("\uD83C\uDF0E Гравитация в мире: G=" + getWorldGravity().getGravityValue() + " \uD83C\uDF0E");
+        System.out.println("\uD83E\uDDCD В мире " + getPeopleCount() + " человек(а) \uD83E\uDDCD");
+        System.out.println("\uD83E\uDE91 В мире " + getObjectsCount() + " объект(ов|а) \uD83E\uDE91");
+
+    }
+
     public void apocalypse() {
         People = null;
         Objects = null;
-        System.out.println("Наступил конец света...\n" +
+        System.out.println("\uD83D\uDCA3 Наступил конец света... \uD83D\uDCA3\n" +
                 "⢿⣿⣿⣿⣭⠹⠛⠛⠛⢿⣿⣿⣿⣿⡿⣿⠷⠶⠿⢻⣿⣛⣦⣙⠻⣿\n" +
                 "⣿⣿⢿⣿⠏⠀⠀⡀⠀⠈⣿⢛⣽⣜⠯⣽⠀⠀⠀⠀⠙⢿⣷⣻⡀⢿\n" +
                 "⠐⠛⢿⣾⣖⣤⡀⠀⢀⡰⠿⢷⣶⣿⡇⠻⣖⣒⣒⣶⣿⣿⡟⢙⣶⣮\n" +
@@ -105,12 +113,12 @@ public class World {
      */
     public void updateWorldGravity(Gravity gravity) {
         if (WorldGravity == gravity) {
-            System.out.println("Гравитация в мире уже " + gravity);
+            System.out.println("\uD83C\uDF0E Гравитация в мире уже " + gravity + " \uD83C\uDF0E");
             return;
         }
         WorldGravity = gravity;
         updateGravity();
-        System.out.println("Гравитация в мире изменилась на " + gravity + " (G = " + gravity.getGravityValue() + ")");
+        System.out.println("\uD83C\uDF0E Гравитация в мире изменилась: G=" + gravity.getGravityValue() + " \uD83C\uDF0E");
     }
 
     /**

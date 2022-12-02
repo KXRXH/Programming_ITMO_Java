@@ -22,11 +22,11 @@ public class CleverMan extends Man {
         }
         if (MansBook == null) {
             MansBook = book;
-            System.out.println(getName() + " начал читать " + MansBook.getTitle());
+            System.out.println("\uD83D\uDCDA " + getName() + " начал читать " + MansBook.getTitle() +" \uD83D\uDCDA");
             addKnowledge(MansBook.getKnowledge());
             return;
         }
-        System.out.println(getName() + " уже читает " + MansBook.getTitle());
+        System.out.println("\uD83D\uDCDA " + getName() + " уже читает " + MansBook.getTitle() + " \uD83D\uDCDA");
     }
 
     @Override
@@ -36,7 +36,7 @@ public class CleverMan extends Man {
             MansBook = null;
             return;
         }
-        System.out.println(getName() + " не читает ничего");
+        System.out.println("\uD83D\uDCDA " + getName() + " не читает ничего \uD83D\uDCDA");
     }
 
     @Override

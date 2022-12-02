@@ -4,6 +4,7 @@ import Lab3_4.Exceptions.BadIndexException;
 import Lab3_4.Exceptions.NullBookException;
 import Lab3_4.Generator.Generator;
 import Lab3_4.Human.CleverMan;
+import Lab3_4.Human.HandsState;
 import Lab3_4.Human.Mood;
 import Lab3_4.Human.Sex;
 import Lab3_4.Objects.Book;
@@ -24,14 +25,15 @@ public class Lab3_4 {
         });
         world.addObject(Generator.generateNewBook());
         world.addObject(Generator.generateNewBookShelf(20));
-        System.out.println(world.getObject(1));
-        System.out.println("В мире " + world.getPeopleCount() + " человек(а)");
         // world.getMan(0).info();
+        world.info();
         world.updateWorldGravity(Gravity.Zero);
         world.addObject(Generator.generateNewChair());
         world.updateWorldGravity(Gravity.Earth);
         world.getMan(0).sitOnChair((Chair) world.getObject(2));
         world.updateWorldGravity(Gravity.Zero);
+        znayka.setHandState(HandsState.BothUp);
+        znayka.startFly();
         world.apocalypse();
         // world.getMan(0).info();
     }

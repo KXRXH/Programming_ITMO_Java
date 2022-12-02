@@ -61,10 +61,11 @@ public class BookShelf extends SomeObject {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append("Книжная полка состоит из ").append(Books.size()).append(" книг:\n");
+        result.append("\uD83D\uDCDA Книжная полка состоит из ").append(Books.size()).append(" книг:\n");
         for (Book book : Books) {
             result.append(book.toString()).append("\n");
         }
+        result.append(" \uD83D\uDCDA");
         return result.toString();
     }
 

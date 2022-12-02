@@ -1,11 +1,11 @@
 package Lab3_4.Human;
 
 public enum HandsState {
-    BothUp("Оба руки подняты"),
-    BothDown("Оба руки опущены"),
+    BothUp("Обе руки подняты \uD83D\uDE4C"),
+    BothDown("Обе руки опущены"),
     LeftUp("Левая рука поднята"),
     RightUp("Правая рука поднята"),
-    Strange("Руки в непонятном положении");
+    Strange("Руки в непонятном положении \uD83E\uDD1E");
 
     private final String TextValue;
 

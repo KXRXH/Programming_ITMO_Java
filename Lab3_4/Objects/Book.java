@@ -25,7 +25,7 @@ public class Book extends SomeObject {
         if (State == state) {
             return;
         }
-        System.out.println("Книга " + this.getTitle() + " теперь " + state.toString().toLowerCase());
+        System.out.println("\uD83D\uDCD7 Книга " + this.getTitle() + " теперь " + state.toString().toLowerCase() + " \uD83D\uDCD7");
         this.State = state;
     }
 

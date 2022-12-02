@@ -24,12 +24,12 @@ public class Chair extends SomeObject {
             return;
         }
         if (SittingMan != null) {
-            System.out.println("На стуле уже сидит " + SittingMan.getName());
+            System.out.println("\uD83E\uDDD2\uD83E\uDE91\uD83E\uDDD2 На стуле уже сидит " + SittingMan.getName() + " \uD83E\uDDD2\uD83E\uDE91\uD83E\uDDD2");
             return;
         }
         SittingMan = man;
         man.setState(Lab3_4.Human.State.Sit);
-        System.out.println("На стуле#" + getChairId() + " сидит " + SittingMan.getName());
+        System.out.println("\uD83E\uDDD2\uD83E\uDE91 На стуле#" + getChairId() + " сидит " + SittingMan.getName() + " \uD83E\uDDD2\uD83E\uDE91");
     }
 
     @Override
@@ -40,15 +40,13 @@ public class Chair extends SomeObject {
         switch (state) {
             case Fly -> {
                 if (SittingMan != null) {
-                    System.out.println(SittingMan.getName() + " падает со стула");
+                    System.out.println("\uD83C\uDF20 " + SittingMan.getName() + " падает со стула... \uD83C\uDF20");
                     SittingMan = null;
                 }
-                State = state;
-                System.out.println("Стул#" + this.getChairId() + " теперь " + state.toString().toLowerCase());
+                System.out.println("\uD83E\uDE91 Стул#" + this.getChairId() + " теперь " + state.toString().toLowerCase() + " \uD83E\uDE91");
             }
             case Stand -> {
-                System.out.println("Стул#" + this.getChairId() + " падает на землю");
-                State = state;
+                System.out.println("\uD83E\uDE91 Стул#" + this.getChairId() + " падает на землю \uD83E\uDE91");
             }
         }
         this.State = state;
@@ -60,9 +58,7 @@ public class Chair extends SomeObject {
 
     @Override
     public String toString() {
-        return "Стул с количеством ножек: " + this.getLegsCount() + " | Состояние: " +
-                this.getState().toString().toLowerCase() + " | Сидит на нем: " +
-                (SittingMan == null ? "Никто" : SittingMan.getName());
+        return "\uD83E\uDE91 Стул с количеством ножек: " + this.getLegsCount() + " | Состояние: " + this.getState().toString().toLowerCase() + " | Сидит на нем: " + (SittingMan == null ? "Никто" : SittingMan.getName());
     }
 
     @Override

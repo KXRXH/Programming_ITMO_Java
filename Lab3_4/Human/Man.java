@@ -57,6 +57,14 @@ public abstract class Man implements Alive {
         return ManHands;
     }
 
+    public final void setHandState(HandsState handsState) {
+        if (getHandState() == handsState) {
+            return;
+        }
+        ManHands = handsState;
+        System.out.println(getName() + ": " + getHandState());
+    }
+
     public final State getState() {
         return ManState;
     }
@@ -146,10 +154,10 @@ public abstract class Man implements Alive {
     public final void startFly() {
         if (getHandState() == HandsState.BothUp && getState() == State.Fly) {
             setState(State.FlyLikeABird);
-            System.out.println(getName() + " летает словно птица!");
+            System.out.println("\uD83D\uDC26 " + getName() + " летает словно птица! \uD83D\uDC26");
             return;
         }
-        System.out.println(getName() + " не может летать, пока не поднимет руки");
+        System.out.println("\uD83D\uDC4E " + getName() + " не может летать, пока не поднимет руки \uD83D\uDC4E");
     }
 
     protected final void addKnowledge(String knowledge) {
@@ -161,22 +169,22 @@ public abstract class Man implements Alive {
      */
     public final void goSleep() {
         if (ManState == State.Fly || ManState == State.Lie) {
-            System.out.println(getName() + " засыпает...");
+            System.out.println("\uD83D\uDE34 " + getName() + " засыпает... \uD83D\uDE34");
             switch (DreamType.getRandDreamType()) {
                 case GoodDream -> {
-                    System.out.println(getName() + " увидел(а) хороший сон");
+                    System.out.println("\uD83D\uDCA4 " + getName() + " увидел(а) хороший сон \uD83D\uDCA4");
                     ManMood = Mood.Happy;
                 }
                 case BadDream -> {
-                    System.out.println(getName() + " увидел(а) плохой сон");
+                    System.out.println("\uD83D\uDCA4 " + getName() + " увидел(а) плохой сон \uD83D\uDCA4");
                     ManMood = Mood.Sad;
                 }
                 case Nightmare -> {
-                    System.out.println(getName() + " увидел(а) кошмарный сон");
+                    System.out.println("\uD83D\uDCA4 " + getName() + " увидел(а) кошмарный сон \uD83D\uDCA4");
                     ManMood = Mood.Scared;
                 }
                 case None -> {
-                    System.out.println(getName() + " не увидел(а) сна");
+                    System.out.println("\uD83D\uDCA4 " + getName() + " не увидел(а) сна \uD83D\uDCA4");
                     ManMood = Mood.Neutral;
                 }
             }
@@ -186,7 +194,7 @@ public abstract class Man implements Alive {
             }
             ManState = State.Sleep;
         }
-        System.out.println(getName() + " не может сейчас заснуть!");
+        System.out.println("❌ " + getName() + " не может сейчас заснуть! ❌");
     }
 
     /**

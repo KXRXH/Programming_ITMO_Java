@@ -16,7 +16,7 @@ public abstract class SomeObject {
     }
 
     public void setState(ObjectState state) {
-        System.out.println("Объект " + this.getClass().getSimpleName() + " теперь " + state.toString().toLowerCase());
+        System.out.println("\uD83D\uDCE6 Объект " + this.getClass().getSimpleName() + " теперь " + state.toString().toLowerCase() + " \uD83D\uDCE6");
         this.State = state;
     }
 
