@@ -1,6 +1,6 @@
 package Lab3_4.Objects;
 
-public abstract class SomeObject {
+public abstract class SomeObject implements Inanimate {
     protected final Weight ObjectWeight;
     protected final Material Material;
     protected ObjectState State;
@@ -18,6 +18,10 @@ public abstract class SomeObject {
     public void setState(ObjectState state) {
         System.out.println("\uD83D\uDCE6 Объект " + this.getClass().getSimpleName() + " теперь " + state.toString().toLowerCase() + " \uD83D\uDCE6");
         this.State = state;
+    }
+
+    public Material getMaterial() {
+        return Material;
     }
 
     public Weight getWeight() {

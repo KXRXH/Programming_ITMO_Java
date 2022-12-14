@@ -1,7 +1,7 @@
 package Lab3_4.Generator;
 
 import Lab3_4.Human.FoolishPerson;
-import Lab3_4.Human.Man;
+import Lab3_4.Human.Person;
 import Lab3_4.Human.Sex;
 import Lab3_4.Objects.*;
 
@@ -17,7 +17,7 @@ public class Generator {
             "Лидия", "Любовь", "Маргарита", "Марина", "Мария", "Надежда", "Наталья", "Нина", "Оксана", "Ольга",
             "Полина", "Светлана", "София", "Татьяна", "Ульяна", "Фаина", "Юлия", "Яна", "Ярослава"};
 
-    public static Man generateNewMan() {
+    public static Person generateNewMan() {
         Integer age = (int) (Math.random() * 55 + 5);
         Sex sex = (new Random().nextInt(2) == 0) ? Sex.Male : Sex.Female;
         final String name;

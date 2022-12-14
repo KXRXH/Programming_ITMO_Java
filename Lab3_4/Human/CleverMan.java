@@ -3,9 +3,13 @@ package Lab3_4.Human;
 import Lab3_4.Exceptions.NullBookException;
 import Lab3_4.Objects.Book;
 
-public class CleverMan extends Man {
+import java.util.ArrayList;
 
-    private Book MansBook = null;
+public class CleverMan extends Person implements Educated {
+
+    protected Book MansBook = null;
+
+    protected ArrayList<String> PersonsKnowledge = new ArrayList<>();
 
     public CleverMan(String name, Integer age, Sex sex) {
         super(name, age, sex);
@@ -22,11 +26,22 @@ public class CleverMan extends Man {
         }
         if (MansBook == null) {
             MansBook = book;
-            System.out.println("\uD83D\uDCDA " + getName() + " начал читать " + MansBook.getTitle() +" \uD83D\uDCDA");
+            System.out.println("\uD83D\uDCDA " + getName() + " начал читать " + MansBook.getTitle() + " \uD83D\uDCDA");
             addKnowledge(MansBook.getKnowledge());
             return;
         }
         System.out.println("\uD83D\uDCDA " + getName() + " уже читает " + MansBook.getTitle() + " \uD83D\uDCDA");
+    }
+
+    @Override
+    public void learn(String somethingNew) {
+        for (String knowledge : PersonsKnowledge) {
+            if (knowledge.equals(somethingNew)) {
+                System.out.println("\uD83D\uDCDA " + getName() + " уже знает " + somethingNew + " \uD83D\uDCDA");
+                return;
+            }
+        }
+        PersonsKnowledge.add(somethingNew);
     }
 
     @Override

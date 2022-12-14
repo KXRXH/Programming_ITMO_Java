@@ -11,6 +11,7 @@ public enum State {
     SitAndRead("Сидит и читает"),
     Sleep("Спит"),
     Run("Бежит"),
+    Dead("Мертв"),
     Lie("Лежит");
 
     private final String TextValue;

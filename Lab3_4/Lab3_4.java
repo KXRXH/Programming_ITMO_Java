@@ -25,7 +25,7 @@ public class Lab3_4 {
         });
         world.addObject(Generator.generateNewBook());
         world.addObject(Generator.generateNewBookShelf(20));
-        // world.getMan(0).info();
+        // Статистика мира
         world.info();
         world.updateWorldGravity(Gravity.Zero);
         world.addObject(Generator.generateNewChair());
@@ -38,3 +38,4 @@ public class Lab3_4 {
         // world.getMan(0).info();
     }
 }
+

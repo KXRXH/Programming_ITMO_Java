@@ -1,7 +1,7 @@
 package Lab3_4.World;
 
 import Lab3_4.Exceptions.BadIndexException;
-import Lab3_4.Human.Man;
+import Lab3_4.Human.Person;
 import Lab3_4.Human.State;
 import Lab3_4.Objects.ObjectState;
 import Lab3_4.Objects.SomeObject;
@@ -10,7 +10,7 @@ import Lab3_4.Objects.Weight;
 import java.util.ArrayList;
 
 public class World {
-    private ArrayList<Man> People;
+    private ArrayList<Person> People;
     private ArrayList<SomeObject> Objects;
     private Lab3_4.World.Gravity WorldGravity;
 
@@ -66,7 +66,7 @@ public class World {
      * @param index индекс человека в списке людей
      * @return человек, соответствующий индексу
      */
-    public Man getMan(int index) throws BadIndexException {
+    public Person getMan(int index) throws BadIndexException {
         if (index < 0 || index >= getPeopleCount()) {
             throw new BadIndexException("Человека с индексом " + index + " не существует");
         }
@@ -76,7 +76,7 @@ public class World {
     /**
      * @param man человек, который нужно добавить в мир
      */
-    public Man addMan(Man man) {
+    public Person addMan(Person man) {
         People.add(man);
         updateGravity();
         return man;
@@ -129,7 +129,7 @@ public class World {
             // Невесомость
             case Zero -> {
                 // Перевод всех людей и переводим их состояние на "полет"
-                for (Man man : People) {
+                for (Person man : People) {
                     switch (man.getState()) {
                         case Read -> man.setState(State.FlyAndRead);
                         case Sleep -> man.setState(State.FlyAndSleep);
@@ -167,7 +167,7 @@ public class World {
 
     // Changing state for low and Earth gravity
     private void changeGravityForPeople() {
-        for (Man man : People) {
+        for (Person man : People) {
             switch (man.getState()) {
                 case FlyAndSleep -> {
                     System.out.println(man.getName() + " падает на землю и просыпается.");

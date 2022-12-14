@@ -1,12 +1,12 @@
 package Lab3_4.Objects;
 
-import Lab3_4.Human.Man;
+import Lab3_4.Human.Person;
 
 
 public class Chair extends SomeObject {
     private final Integer LegsCount;
     private final Integer ChairId;
-    private Man SittingMan = null;
+    private Person SittingMan = null;
 
     public Chair(Material material, Integer legsCount, ObjectState state) {
         super(state, Weight.Light, material);
@@ -18,7 +18,7 @@ public class Chair extends SomeObject {
         return LegsCount;
     }
 
-    public void setSittingMan(Man man) {
+    public void setSittingMan(Person man) {
         if (getState() == ObjectState.Fly) {
             System.out.println("Стул летит, на него нельзя сесть");
             return;
