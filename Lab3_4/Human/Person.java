@@ -14,6 +14,7 @@ public abstract class Person implements Man, Alive {
     protected final ArrayList<String> KnowledgeArray = new ArrayList<>();
     protected Integer Age;
     protected Mood ManMood;
+    protected Health ManHealth;
     protected State ManState;
     protected HandsState ManHands;
 
@@ -22,6 +23,7 @@ public abstract class Person implements Man, Alive {
         Age = age;
         ManSex = sex;
         ManMood = Mood.Neutral;
+        ManHealth = Health.Ok;
         ManState = State.Stand;
     }
 
@@ -29,6 +31,7 @@ public abstract class Person implements Man, Alive {
         Name = name;
         Age = age;
         ManSex = sex;
+        ManHealth = Health.Ok;
         ManMood = mood;
         ManState = state;
     }
@@ -45,6 +48,19 @@ public abstract class Person implements Man, Alive {
         return ManSex;
     }
 
+    public final Health getHealth() {
+        return ManHealth;
+    }
+
+    public final void setHealth(Health health) {
+        if (ManHealth == Health.Dead) {
+            System.out.println("Нельзя изменить здоровье мертвого");
+            return;
+        }
+        System.out.println(getName() + " теперь " + health);
+        ManHealth = health;
+    }
+
     public final Mood getMood() {
         return ManMood;
     }
@@ -54,8 +70,13 @@ public abstract class Person implements Man, Alive {
     }
 
     public final void die() {
-        this.ManState = State.Dead;
-        System.out.println(getName() + " умер");
+        if (ManHealth == Health.Dead) {
+            System.out.println("Нельзя умереть дважды");
+            return;
+        }
+        ManHealth = Health.Dead;
+        ManHands = HandsState.Strange;
+        System.out.println("RIP " + getName() + " умер.");
     }
 
     public HandsState getHandState() {
@@ -78,7 +99,7 @@ public abstract class Person implements Man, Alive {
      * @param state состояние человека
      */
     public void setState(State state) {
-        if (getState() == State.Dead) {
+        if (getHealth() == Health.Dead) {
             System.out.println(getName() + " мертв");
             return;
         }
@@ -98,6 +119,7 @@ public abstract class Person implements Man, Alive {
                     }
                     default -> {
                         ManState = State.Sit;
+                        return;
                     }
                 }
             }
@@ -161,6 +183,10 @@ public abstract class Person implements Man, Alive {
     }
 
     public final void startFly() {
+        if (getHealth() == Health.Dead) {
+            System.out.println(getName() + " мертв");
+            return;
+        }
         if (getHandState() == HandsState.BothUp && getState() == State.Fly) {
             setState(State.FlyLikeABird);
             System.out.println("\uD83D\uDC26 " + getName() + " летает словно птица! \uD83D\uDC26");
@@ -177,6 +203,10 @@ public abstract class Person implements Man, Alive {
      * Человек засыпает
      */
     public final void goSleep() {
+        if (getHealth() == Health.Dead) {
+            System.out.println(getName() + " мертв");
+            return;
+        }
         if (ManState == State.Fly || ManState == State.Lie) {
             System.out.println("\uD83D\uDE34 " + getName() + " засыпает... \uD83D\uDE34");
             switch (DreamType.getRandDreamType()) {
@@ -210,6 +240,10 @@ public abstract class Person implements Man, Alive {
      * Человек просыпается
      */
     public final void wakeUp() {
+        if (getHealth() == Health.Dead) {
+            System.out.println(getName() + " мертв");
+            return;
+        }
         if (ManState == State.Sleep || ManState == State.FlyAndSleep) {
             System.out.println(getName() + " просыпается...");
             if (ManState == State.FlyAndSleep) {
@@ -225,6 +259,10 @@ public abstract class Person implements Man, Alive {
      * Человек взрослеет на год
      */
     public void growUp() {
+        if (getHealth() == Health.Dead) {
+            System.out.println(getName() + " мертв");
+            return;
+        }
         Age++;
         System.out.println(getName() + " стал старше на год. Теперь ему " + getAge() + " лет.");
     }
@@ -234,10 +272,14 @@ public abstract class Person implements Man, Alive {
      *             Человек начинает читать книгу
      */
     public void startReading(Book book) throws NullBookException {
+        if (getHealth() == Health.Dead) {
+            System.out.println(getName() + " мертв");
+            return;
+        }
         System.out.println(getName() + " не умеет читать!");
     }
 
-    public void startReading(BookShelf bookShelf, Integer index) throws NullBookException {
+    public final void startReading(BookShelf bookShelf, Integer index) throws NullBookException {
         this.startReading(bookShelf.getBook(index));
     }
 

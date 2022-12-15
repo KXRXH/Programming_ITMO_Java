@@ -32,8 +32,10 @@ public class Lab3_4 {
         world.updateWorldGravity(Gravity.Earth);
         world.getMan(0).sitOnChair((Chair) world.getObject(2));
         world.updateWorldGravity(Gravity.Zero);
+        znayka.startFly();
         znayka.setHandState(HandsState.BothUp);
         znayka.startFly();
+        znayka.die();
         world.apocalypse();
         // world.getMan(0).info();
     }
